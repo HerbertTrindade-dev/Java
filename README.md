@@ -1,4 +1,4 @@
-# 🚀 Maratona de Estudos Java
+# Maratona de Estudos Java
 
 Este repositório é o registro da minha jornada para me tornar um desenvolvedor **Java Backend**. Aqui documento meus estudos de lógica de programação, conceitos fundamentais e projetos práticos.
 
@@ -6,7 +6,7 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 
 ---
 
-## 📂 Conteúdo dos Estudos
+## Conteúdo dos Estudos
 
 ### 🔹 Fundamentos
 - [x] Variáveis e tipos primitivos
@@ -17,7 +17,7 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 ### 🔹 Programação Orientada a Objetos (OOP)
 - [x] Classes, Atributos e Métodos
 - [x] Modificadores de acesso e Encapsulamento
-- [ ] Herança e Polimorfismo
+- [x] Herança e Polimorfismo
 - [ ] Interfaces e Classes Abstratas
 
 ### 🔹 Integração e Persistência
@@ -31,7 +31,7 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
+## Ferramentas Utilizadas
 * **IDE:** IntelliJ IDEA
 * **S.O:** Linux & Windows
 * **Controle de Versão:** Git
