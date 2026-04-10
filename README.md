@@ -9,25 +9,25 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 ## Conteúdo dos Estudos
 
 ### Fundamentos
-- [x] Variáveis e tipos primitivos
-- [x] Operadores (Aritméticos, Lógicos e Relacionais)
-- [x] Estruturas condicionais (`if`, `else`, `switch`)
-- [x] Estruturas de repetição (`for`, `while`, `do-while`)
+-  Variáveis e tipos primitivos
+-  Operadores (Aritméticos, Lógicos e Relacionais)
+-  Estruturas condicionais (`if`, `else`, `switch`)
+-  Estruturas de repetição (`for`, `while`, `do-while`)
 
 ### Programação Orientada a Objetos (OOP)
-- [x] Classes, Atributos e Métodos
-- [x] Modificadores de acesso e Encapsulamento
-- [x] Herança e Polimorfismo
-- [ ] Interfaces e Classes Abstratas
+-  Classes, Atributos e Métodos
+-  Modificadores de acesso e Encapsulamento
+-  Herança e Polimorfismo
+-  Interfaces e Classes Abstratas
 
 ### Integração e Persistência
-- [ ] Manipulação de Exceções
-- [ ] JDBC (Conexão com Bancos de Dados)
-- [ ] MySQL
+-  Manipulação de Exceções
+-  JDBC (Conexão com Bancos de Dados)
+-  MySQL
 
 ### Ecossistema Spring
-- [ ] Spring Boot
-- [ ] Construção de APIs REST
+-  Spring Boot
+-  Construção de APIs REST
 
 ---
 
