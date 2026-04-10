@@ -39,4 +39,4 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 ---
 
 ##  Desenvolvido por
-**Herbert Trindade** [LinkedIn](www.linkedin.com/in/herbert-trindade-dos-santos-7b7878320)
+**Herbert Trindade** [LinkedIn](https://www.linkedin.com/in/herbert-trindade-dos-santos-7b7878320/)
