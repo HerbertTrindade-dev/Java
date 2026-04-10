@@ -1,4 +1,4 @@
-package ProjetoHerancaPolimorfismo.ProjetoHeranca01.entities;
+package ProjetoHeranca01.entities;
 
 public class ImportedProduct extends Product {
 

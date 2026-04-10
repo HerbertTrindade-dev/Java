@@ -1,8 +1,8 @@
-package ProjetoHerancaPolimorfismo.ProjetoHeranca01.application;
+package ProjetoHeranca01.application;
 
-import ProjetoHerancaPolimorfismo.ProjetoHeranca01.entities.ImportedProduct;
-import ProjetoHerancaPolimorfismo.ProjetoHeranca01.entities.Product;
-import ProjetoHerancaPolimorfismo.ProjetoHeranca01.entities.UsedProduct;
+import ProjetoHeranca01.entities.ImportedProduct;
+import ProjetoHeranca01.entities.Product;
+import ProjetoHeranca01.entities.UsedProduct;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

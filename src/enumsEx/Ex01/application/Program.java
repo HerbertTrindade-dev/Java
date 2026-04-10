@@ -1,6 +1,6 @@
-package ProjetoEnums.Ex01.application;
+package enumsEx.Ex01.application;
 
-import ProjetoEnums.Ex01.entities.enums.Cores;
+import enumsEx.Ex01.entities.enums.Cores;
 
 import java.util.Scanner;
 

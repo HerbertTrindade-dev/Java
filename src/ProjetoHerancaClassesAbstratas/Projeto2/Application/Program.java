@@ -1,4 +1,4 @@
-package ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto2.Application;
+package ProjetoHerancaClassesAbstratas.Projeto2.Application;
 
 public class Program {
 }

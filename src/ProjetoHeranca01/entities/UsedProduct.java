@@ -1,4 +1,4 @@
-package ProjetoHerancaPolimorfismo.ProjetoHeranca01.entities;
+package ProjetoHeranca01.entities;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

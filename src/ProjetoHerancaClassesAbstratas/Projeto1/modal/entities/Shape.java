@@ -1,4 +1,4 @@
-package ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.modal.entities;
+package ProjetoHerancaClassesAbstratas.Projeto1.modal.entities;
 
 public abstract class  Shape {
     private Color color;

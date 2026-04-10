@@ -1,9 +1,9 @@
-package ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.application;
+package ProjetoHerancaClassesAbstratas.Projeto1.application;
 
-import ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Circle;
-import ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Color;
-import ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Rectangle;
-import ProjetoHerancaPolimorfismo.ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Shape;
+import ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Circle;
+import ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Color;
+import ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Rectangle;
+import ProjetoHerancaClassesAbstratas.Projeto1.modal.entities.Shape;
 
 import java.util.ArrayList;
 import java.util.List;

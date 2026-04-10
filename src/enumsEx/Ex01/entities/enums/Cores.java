@@ -1,4 +1,4 @@
-package ProjetoEnums.Ex01.entities.enums;
+package enumsEx.Ex01.entities.enums;
 
 public enum Cores {
     VERDE(1,"Verde"){
