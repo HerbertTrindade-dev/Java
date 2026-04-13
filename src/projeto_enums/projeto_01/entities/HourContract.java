@@ -41,9 +41,6 @@ public class HourContract {
         this.date = date;
     }
 
-    public double totalValue(){
-        return qtdHour * valuePerHour;
-    }
 
 
 

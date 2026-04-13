@@ -1,4 +1,4 @@
-package projeto_enums.Projeto02.model.entities;
+package projeto_enums.projeto_02.model.entities;
 
 public class Product {
 

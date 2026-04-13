@@ -2,6 +2,7 @@ package projeto_enums.projeto_01.entities;
 
 import projeto_enums.projeto_01.enums.WorkerLevel;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class Worker {
 
     private String name;
     private WorkerLevel level;
-    private Double salary;
+    private LocalDate birthday;
 
     private Department department;
     private List<HourContract> hourContract = new ArrayList<>();
@@ -17,11 +18,11 @@ public class Worker {
     public Worker(){
     }
 
-    public Worker(String name,WorkerLevel level,Double salary,Department department){
-         this.name = name;
-         this.level = level;
-         this.salary = salary;
-         this.department = department;
+    public Worker(String name, WorkerLevel level, LocalDate birthday, Department department) {
+        this.name = name;
+        this.level = level;
+        this.birthday = birthday;
+        this.department = department;
     }
 
     public String getName(){
@@ -40,12 +41,12 @@ public class Worker {
         this.level = level;
     }
 
-    public double getSalary(){
-        return salary;
+    public double getBirthday(){
+        return birthday;
     }
 
-    public void setSalary(double salary){
-        this.salary = salary;
+    public void setBirthday(int birthday){
+        this.birthday = this.birthday;
     }
 
     public List<HourContract> getHourContract(){
@@ -59,24 +60,5 @@ public class Worker {
     public void removeServices(HourContract hourContract){
         this.hourContract.remove(hourContract);
     }
-
-    public double income(int month, int year){
-        double totalSalary = salary;
-        for (HourContract s : hourContract ){
-            if (month == s.getDate().getMonthValue() && year == s.getDate().getYear()){
-                totalSalary += s.totalValue();
-            }
-        }
-        return totalSalary;
-    }
-
-    @Override
-    public String toString(){
-        return "Name:"+ name
-                + "\nDepartamento:"+department.getName();
-
-    }
-
-
 
 }

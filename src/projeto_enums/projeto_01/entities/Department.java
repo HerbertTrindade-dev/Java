@@ -1,28 +1,34 @@
 package projeto_enums.projeto_01.entities;
 
-public abstract class Department{
+public abstract class Department {
 
-     private String name;
+     private Integer additional;
 
-     public Department (){
+     public Department() {
      }
 
-     public Department (String name){
-         this.name = name;
+     public Department(Integer additional) {
+          this.additional = additional;
      }
 
-     public String getName(){
-          return name;
+     public Integer getAdditional() {
+          return additional;
      }
 
-     public void setName(String name){
-          this.name = name;
+     public void setAdditional(Integer additional) {
+          this.additional = additional;
      }
 
-     @Override
-     public String toString() {
-          return  name;
+     public double getOvertimeRate(){
+          return 0;
      }
+
+     public double getSalary(){
+          return 0;
+     }
+
+
+
 }
 
 
