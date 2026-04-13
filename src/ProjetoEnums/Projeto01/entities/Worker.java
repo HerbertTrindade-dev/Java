@@ -1,6 +1,6 @@
 package ProjetoEnums.Projeto01.entities;
 
-import ProjetoEnums.Projeto01.enums.WorkerLevel;
+import ProjetoEnums.Projeto01.entities.enums.WorkerLevel;
 
 import java.util.ArrayList;
 import java.util.List;

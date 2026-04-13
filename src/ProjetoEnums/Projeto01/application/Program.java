@@ -3,7 +3,7 @@ package ProjetoEnums.Projeto01.application;
 import ProjetoEnums.Projeto01.entities.Department;
 import ProjetoEnums.Projeto01.entities.Services;
 import ProjetoEnums.Projeto01.entities.Worker;
-import ProjetoEnums.Projeto01.enums.WorkerLevel;
+import ProjetoEnums.Projeto01.entities.enums.WorkerLevel;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -21,12 +21,12 @@ public class Program {
         String nameDepartment = sc.nextLine();
         System.out.print("Nome: ");
         String name = sc.nextLine();
-        System.out.print("Nivel-[JUNIOR;PLENO;SENIOR]:");
-        String level = sc.nextLine();
+        System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
+        int level = sc.nextInt();
         System.out.print("Salario: R$");
         double salary = sc.nextDouble();
 
-        Worker worker = new Worker(name,WorkerLevel.valueOf(level),salary, new Department(nameDepartment));
+        Worker worker = new Worker(name,WorkerLevel.values()[level],salary, new Department(nameDepartment));
 
 
         System.out.print("Quantos servicos foram prestados:");

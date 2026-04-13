@@ -1,4 +1,4 @@
-package enumsEx.Ex01.entities.enums;
+package CursoMaratonaJava.POO.Enums.Ex01.entities.enums;
 
 public enum Cores {
     VERDE(1,"Verde"){

@@ -1,6 +1,6 @@
-package enumsEx.Ex01.application;
+package CursoMaratonaJava.POO.Enums.Ex01.application;
 
-import enumsEx.Ex01.entities.enums.Cores;
+import CursoMaratonaJava.POO.Enums.Ex01.entities.enums.Cores;
 
 import java.util.Scanner;
 
