@@ -1,17 +1,17 @@
-package ProjetoEnums.Projeto01.entities;
+package projeto_enums.projeto_01.entities;
 
 import java.time.LocalDate;
 
-public class Services {
+public class HourContract {
 
     private Double valuePerHour;
     private Integer qtdHour;
     private LocalDate date;
 
-    public Services(){
+    public HourContract(){
     }
 
-    public Services(Double valuePerHour, Integer qtdHour, LocalDate date){
+    public HourContract(Double valuePerHour, Integer qtdHour, LocalDate date){
         this.valuePerHour = valuePerHour;
         this.qtdHour = qtdHour;
         this.date = date;

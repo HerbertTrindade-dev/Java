@@ -1,4 +1,4 @@
-package ProjetoEnums.Projeto01.entities.enums;
+package projeto_enums.projeto_01.enums;
 
 public enum WorkerLevel {
 
@@ -14,6 +14,11 @@ public enum WorkerLevel {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
 
-
+    public String getName() {
+        return name;
+    }
 }

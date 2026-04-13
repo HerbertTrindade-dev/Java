@@ -1,10 +1,10 @@
-package ProjetoEnums.Projeto02.application;
+package projeto_enums.Projeto02.application;
 
-import ProjetoEnums.Projeto02.model.entities.Client;
-import ProjetoEnums.Projeto02.model.entities.Order;
-import ProjetoEnums.Projeto02.model.entities.OrderItem;
-import ProjetoEnums.Projeto02.model.entities.Product;
-import ProjetoEnums.Projeto02.model.entities.OrderStatus;
+import projeto_enums.Projeto02.model.entities.Client;
+import projeto_enums.Projeto02.model.entities.Order;
+import projeto_enums.Projeto02.model.entities.OrderItem;
+import projeto_enums.Projeto02.model.entities.Product;
+import projeto_enums.Projeto02.model.entities.OrderStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

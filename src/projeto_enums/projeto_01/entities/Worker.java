@@ -1,6 +1,6 @@
-package ProjetoEnums.Projeto01.entities;
+package projeto_enums.projeto_01.entities;
 
-import ProjetoEnums.Projeto01.entities.enums.WorkerLevel;
+import projeto_enums.projeto_01.enums.WorkerLevel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Worker {
     private Double salary;
 
     private Department department;
-    private List<Services> services = new ArrayList<>();
+    private List<HourContract> hourContract = new ArrayList<>();
 
     public Worker(){
     }
@@ -48,21 +48,21 @@ public class Worker {
         this.salary = salary;
     }
 
-    public List<Services> getServices(){
-        return services;
+    public List<HourContract> getHourContract(){
+        return hourContract;
     }
 
-    public void addServices(Services services){
-        this.services.add(services);
+    public void addServices(HourContract hourContract){
+        this.hourContract.add(hourContract);
     }
 
-    public void removeServices(Services services){
-        this.services.remove(services);
+    public void removeServices(HourContract hourContract){
+        this.hourContract.remove(hourContract);
     }
 
     public double income(int month, int year){
         double totalSalary = salary;
-        for (Services s : services ){
+        for (HourContract s : hourContract ){
             if (month == s.getDate().getMonthValue() && year == s.getDate().getYear()){
                 totalSalary += s.totalValue();
             }
@@ -73,7 +73,7 @@ public class Worker {
     @Override
     public String toString(){
         return "Name:"+ name
-                + "\nDepartamento:"+department.getNameDepartment();
+                + "\nDepartamento:"+department.getName();
 
     }
 

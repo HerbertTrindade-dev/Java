@@ -1,4 +1,4 @@
-package ProjetoEnums.Projeto02.model.entities;
+package projeto_enums.Projeto02.model.entities;
 
 public enum OrderStatus {
 
