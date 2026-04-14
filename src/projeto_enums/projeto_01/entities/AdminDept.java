@@ -1,8 +1,5 @@
 package projeto_enums.projeto_01.entities;
 
-import projeto_enums.projeto_01.services.CalculationSalary;
-import projeto_enums.projeto_01.services.CalculationService;
-
 public class AdminDept extends Department {
 
     public AdminDept() {

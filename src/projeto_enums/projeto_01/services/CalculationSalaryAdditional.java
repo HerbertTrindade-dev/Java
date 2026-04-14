@@ -2,7 +2,7 @@ package projeto_enums.projeto_01.services;
 
 import projeto_enums.projeto_01.entities.Department;
 
-public interface CalculationService {
+public interface CalculationSalaryAdditional {
      default double service(int additinal,Department dept){
         return additinal * dept.getTax();
     }

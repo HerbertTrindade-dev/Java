@@ -1,9 +1,9 @@
 package projeto_enums.projeto_01.entities;
 
 import projeto_enums.projeto_01.services.CalculationSalary;
-import projeto_enums.projeto_01.services.CalculationService;
+import projeto_enums.projeto_01.services.CalculationSalaryAdditional;
 
-public abstract class Department implements CalculationSalary, CalculationService {
+public abstract class Department implements CalculationSalary, CalculationSalaryAdditional {
 
      private Integer additional;
 

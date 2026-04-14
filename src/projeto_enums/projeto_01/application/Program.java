@@ -5,6 +5,8 @@ import projeto_enums.projeto_01.enums.WorkerLevel;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,11 +20,12 @@ public class Program {
         System.out.println("=======REGISTRO SALARIAL========");
         System.out.print("Quantidade de Funcionários:");
         int qtdEmployee = sc.nextInt();
+        List<Worker> workers = new ArrayList<>();
         for (int i = 0; i < qtdEmployee; i++) {
             System.out.println("----------------------------------------");
-            System.out.println("Digite os dados do servidor #" +(1+i) + ":");
             System.out.print("Nome: ");
             String name = sc.nextLine();
+            System.out.println("Digite os dados do servidor #" +(1+i) + ":");
             System.out.print("Departamento (1-ADM, 2-Vendas, 3-Recpção):");
             int deptChoice = sc.nextInt();
             Department dept = null;
@@ -51,7 +54,7 @@ public class Program {
             int level = sc.nextInt();
             System.out.print("Digite a quantidade de dias trabalhados:");
             int daysWork = sc.nextInt();
-            Worker worker = new Worker(name,WorkerLevel.searchId(level),birthday,dept,daysWork);
+            W
         }
         System.out.print("Houve prestação de serviço extra: [s/n]");
         char choice = sc.next().charAt(0);
