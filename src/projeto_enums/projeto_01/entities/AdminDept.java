@@ -24,5 +24,13 @@ public class AdminDept extends Department {
         return 500.00;
     }
 
+    @Override
+    public void addWorker(Worker worker) {
+        super.addWorker(worker);
+    }
 
+    @Override
+    public void removeWorker(Worker worker) {
+        super.removeWorker(worker);
+    }
 }

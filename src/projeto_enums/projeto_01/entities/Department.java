@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class Department implements CalculationSalary, CalculationSalaryAdditional {
 
     private Integer additional;
+    private List<Worker> workerList = new ArrayList<>();
 
 
 
@@ -38,6 +39,20 @@ public abstract class Department implements CalculationSalary, CalculationSalary
     public double getTax() {
         return 0;
     }
+
+    public List<Worker> getWorkerList() {
+        return workerList;
+    }
+
+    public void addWorker(Worker worker){
+        workerList.add(worker);
+   }
+
+    public void removeWorker(Worker worker){
+        workerList.remove(worker);
+    }
+
+
 
 }
 

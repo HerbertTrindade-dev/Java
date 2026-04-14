@@ -62,15 +62,19 @@ public class Worker {
         this.daysWork = daysWork;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
     public List<HourContract> getHourContract(){
         return hourContract;
     }
 
-    public void addServices(HourContract hourContract){
+    public void addContract(HourContract hourContract){
         this.hourContract.add(hourContract);
     }
 
-    public void removeServices(HourContract hourContract){
+    public void removeContract(HourContract hourContract){
         this.hourContract.remove(hourContract);
     }
 

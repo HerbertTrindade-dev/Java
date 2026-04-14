@@ -24,5 +24,15 @@ public class SalesDept extends Department {
         return 25.00;
     }
 
+    @Override
+    public void addWorker(Worker worker) {
+        super.addWorker(worker);
+    }
+
+    @Override
+    public void removeWorker(Worker worker) {
+        super.removeWorker(worker);
+    }
+
 }
 

@@ -2,6 +2,7 @@ package projeto_enums.projeto_01.application;
 
 import projeto_enums.projeto_01.entities.*;
 import projeto_enums.projeto_01.enums.WorkerLevel;
+import projeto_enums.projeto_01.services.CalculationSalary;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,61 +19,62 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=======REGISTRO SALARIAL========");
-        System.out.print("Digite o nome da empresa:");
-        String enterpriseName = sc.nextLine();
-        Enterprise enterprise = new Enterprise(enterpriseName);
         System.out.print("Quantidade de Funcionários:");
         int qtdEmployee = sc.nextInt();
         List<Worker> workers = new ArrayList<>();
         for (int i = 0; i < qtdEmployee; i++) {
             System.out.println("----------------------------------------");
+            System.out.println("Digite os dados do servidor #" + (1 + i) + ":");
             System.out.print("Nome: ");
+            sc.nextLine();
             String name = sc.nextLine();
-            System.out.println("Digite os dados do servidor #" +(1+i) + ":");
+            System.out.print("Data de nascimento (DD/MM/YYYY):");
+            LocalDate birthday = LocalDate.parse(sc.next(), fmt);
             System.out.print("Departamento (1-ADM, 2-Vendas, 3-Recpção):");
             int deptChoice = sc.nextInt();
             Department dept = null;
-            switch (deptChoice){
+
+            switch (deptChoice) {
                 case 1:
-                    System.out.println("Digite a quantidade de projetos feitos:");
+                    System.out.print("Digite a quantidade de projetos feitos:");
                     int additionalProject = sc.nextInt();
                     dept = new AdminDept(additionalProject);
                     break;
                 case 2:
-                    System.out.println("Digite a quantidade de vendas realizadas:");
+                    System.out.print("Digite a quantidade de vendas realizadas:");
                     int additionalSales = sc.nextInt();
-                    dept  = new SalesDept(additionalSales);
+                    dept = new SalesDept(additionalSales);
                     break;
                 case 3:
-                    System.out.println("Digite a quantidade de pessoas atendidas:");
+                    System.out.print("Digite a quantidade de pessoas atendidas:");
                     int additionalRecepcion = sc.nextInt();
                     dept = new RecepcionDept(additionalRecepcion);
                     break;
                 default:
                     System.out.println("Departamento não encontrado");
             }
-            System.out.print("Data de nascimento (DD/MM/YYYY):");
-            LocalDate birthday = LocalDate.parse(sc.next(), fmt);
             System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
+            sc.nextLine();
             int level = sc.nextInt();
-            Worker worker = new Worker(name,WorkerLevel.searchId(level),birthday,dept);
-            workers.add(worker);
+            System.out.print("Digite os dias trabalhados:");
+            int daysWork = sc.nextInt();
+            workers.add(new Worker(name,WorkerLevel.searchId(level),birthday,dept,daysWork));
         }
-        System.out.print("Digite a quantidade de dias trabalhados:");
-        int daysWork = sc.nextInt();
-        System.out.print("Houve prestação de serviço extra: [s/n]");
-        char choice = sc.next().charAt(0);
-        if (choice == 's') {
-            System.out.println("Digite a quantidade de horas extras:");
-            int overtime = sc.nextInt();
-        } else {
+        for(Worker wk : workers){
+            System.out.println("------------------------------------");
+            System.out.println("======RELATORIO FINANCEIRO======");
+            System.out.println("Nome:"+wk.getName());
+            System.out.println("Data de nascimento:"+wk.getBirthday());
+            System.out.println("Senioridade: "+wk.getLevel());
+            System.out.println("Salario: "+wk.getDepartment() );
+            System.out.println("Bonus:");
+            System.out.println("Salario Total:");
+
+
 
         }
-        System.out.println();
-        System.out.println("Digite o periodo para o calculo do valor total(MM/YYYY):");
-        String monthAndYear = sc.nextLine();
-        int month = Integer.parseInt(monthAndYear.substring(0, 2));
-        int year = Integer.parseInt(monthAndYear.substring(3));
-        sc.close();
+
+
+
     }
 }
