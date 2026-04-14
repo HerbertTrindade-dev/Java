@@ -27,6 +27,9 @@ public class Worker {
         this.daysWork = daysWork;
     }
 
+    public Worker(String name, WorkerLevel workerLevel, LocalDate birthday, Department dept) {
+    }
+
     public String getName(){
         return name;
     }

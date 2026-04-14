@@ -23,5 +23,6 @@ public class SalesDept extends Department {
     public double getTax() {
         return 25.00;
     }
+
 }
 

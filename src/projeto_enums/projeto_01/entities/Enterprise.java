@@ -5,5 +5,25 @@ import java.util.List;
 
 public class Enterprise {
     private String name;
-    private List<Worker> workerList = new ArrayList<>();
+    private List<Worker> workerListList = new ArrayList<>();
+
+    public Enterprise(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void addWorker(Worker worker){
+        workerListList.add(worker);
+    }
+
+    public void removeWorker(Worker worker){
+        workerListList.remove(worker);
+    }
 }

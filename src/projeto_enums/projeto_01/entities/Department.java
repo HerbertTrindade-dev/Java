@@ -3,39 +3,41 @@ package projeto_enums.projeto_01.entities;
 import projeto_enums.projeto_01.services.CalculationSalary;
 import projeto_enums.projeto_01.services.CalculationSalaryAdditional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Department implements CalculationSalary, CalculationSalaryAdditional {
 
-     private Integer additional;
+    private Integer additional;
 
 
-     public Department() {
-     }
 
-     public Department(Integer additional) {
-          this.additional = additional;
-     }
+    public Department() {
+    }
 
-     public Integer getAdditional() {
-          return additional;
-     }
+    public Department(Integer additional) {
+        this.additional = additional;
+    }
 
-     public void setAdditional(Integer additional) {
-          this.additional = additional;
-     }
+    public Integer getAdditional() {
+        return additional;
+    }
 
-     public double getOvertimeRate(){
-          return 0;
-     }
+    public void setAdditional(Integer additional) {
+        this.additional = additional;
+    }
 
-     public double getDayWorkSalary(){
-          return 0;
-     }
+    public double getOvertimeRate() {
+        return 0;
+    }
 
-     public double getTax(){
-          return 0;
-     }
+    public double getDayWorkSalary() {
+        return 0;
+    }
 
-
+    public double getTax() {
+        return 0;
+    }
 
 }
 

@@ -22,4 +22,5 @@ public class RecepcionDept extends Department{
     public double getTax() {
         return 2.5;
     }
+
 }

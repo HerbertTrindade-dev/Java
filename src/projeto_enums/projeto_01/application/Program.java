@@ -18,6 +18,9 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=======REGISTRO SALARIAL========");
+        System.out.print("Digite o nome da empresa:");
+        String enterpriseName = sc.nextLine();
+        Enterprise enterprise = new Enterprise(enterpriseName);
         System.out.print("Quantidade de Funcionários:");
         int qtdEmployee = sc.nextInt();
         List<Worker> workers = new ArrayList<>();
@@ -52,10 +55,11 @@ public class Program {
             LocalDate birthday = LocalDate.parse(sc.next(), fmt);
             System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
             int level = sc.nextInt();
-            System.out.print("Digite a quantidade de dias trabalhados:");
-            int daysWork = sc.nextInt();
-            W
+            Worker worker = new Worker(name,WorkerLevel.searchId(level),birthday,dept);
+            workers.add(worker);
         }
+        System.out.print("Digite a quantidade de dias trabalhados:");
+        int daysWork = sc.nextInt();
         System.out.print("Houve prestação de serviço extra: [s/n]");
         char choice = sc.next().charAt(0);
         if (choice == 's') {
