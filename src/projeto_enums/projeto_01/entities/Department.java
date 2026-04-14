@@ -1,8 +1,12 @@
 package projeto_enums.projeto_01.entities;
 
-public abstract class Department {
+import projeto_enums.projeto_01.services.CalculationSalary;
+import projeto_enums.projeto_01.services.CalculationService;
+
+public abstract class Department implements CalculationSalary, CalculationService {
 
      private Integer additional;
+
 
      public Department() {
      }
@@ -23,7 +27,11 @@ public abstract class Department {
           return 0;
      }
 
-     public double getSalary(){
+     public double getDayWorkSalary(){
+          return 0;
+     }
+
+     public double getTax(){
           return 0;
      }
 

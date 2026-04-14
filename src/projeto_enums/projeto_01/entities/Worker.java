@@ -11,6 +11,7 @@ public class Worker {
     private String name;
     private WorkerLevel level;
     private LocalDate birthday;
+    private Integer daysWork;
 
     private Department department;
     private List<HourContract> hourContract = new ArrayList<>();
@@ -18,11 +19,12 @@ public class Worker {
     public Worker(){
     }
 
-    public Worker(String name, WorkerLevel level, LocalDate birthday, Department department) {
+    public Worker(String name, WorkerLevel level, LocalDate birthday, Department department,Integer daysWork) {
         this.name = name;
         this.level = level;
         this.birthday = birthday;
         this.department = department;
+        this.daysWork = daysWork;
     }
 
     public String getName(){
@@ -41,12 +43,20 @@ public class Worker {
         this.level = level;
     }
 
-    public double getBirthday(){
+    public LocalDate getBirthday(){
         return birthday;
     }
 
     public void setBirthday(int birthday){
         this.birthday = this.birthday;
+    }
+
+    public Integer getDaysWork() {
+        return daysWork;
+    }
+
+    public void setDaysWork(Integer daysWork) {
+        this.daysWork = daysWork;
     }
 
     public List<HourContract> getHourContract(){

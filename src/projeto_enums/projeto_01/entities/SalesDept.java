@@ -1,6 +1,9 @@
 package projeto_enums.projeto_01.entities;
 
-public class SalesDept extends Department{
+import projeto_enums.projeto_01.services.CalculationSalary;
+import projeto_enums.projeto_01.services.CalculationService;
+
+public class SalesDept extends Department {
 
     public SalesDept() {
     }
@@ -15,8 +18,13 @@ public class SalesDept extends Department{
     }
 
     @Override
-    public double getSalary() {
-        return 2000.00;
+    public double getDayWorkSalary() {
+        return 100.00;
+    }
+
+    @Override
+    public double getTax() {
+        return 25.00;
     }
 }
 

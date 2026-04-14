@@ -28,13 +28,19 @@ public class Program {
             Department dept = null;
             switch (deptChoice){
                 case 1:
-                    dept = new AdminDept();
+                    System.out.println("Digite a quantidade de projetos feitos:");
+                    int additionalProject = sc.nextInt();
+                    dept = new AdminDept(additionalProject);
                     break;
                 case 2:
-                    dept  = new SalesDept();
+                    System.out.println("Digite a quantidade de vendas realizadas:");
+                    int additionalSales = sc.nextInt();
+                    dept  = new SalesDept(additionalSales);
                     break;
                 case 3:
-                    dept = new RecepcionDept();
+                    System.out.println("Digite a quantidade de pessoas atendidas:");
+                    int additionalRecepcion = sc.nextInt();
+                    dept = new RecepcionDept(additionalRecepcion);
                     break;
                 default:
                     System.out.println("Departamento não encontrado");
@@ -43,7 +49,9 @@ public class Program {
             LocalDate birthday = LocalDate.parse(sc.next(), fmt);
             System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
             int level = sc.nextInt();
-            Worker worker = new Worker(name,WorkerLevel.searchId(level),birthday,dept);
+            System.out.print("Digite a quantidade de dias trabalhados:");
+            int daysWork = sc.nextInt();
+            Worker worker = new Worker(name,WorkerLevel.searchId(level),birthday,dept,daysWork);
         }
         System.out.print("Houve prestação de serviço extra: [s/n]");
         char choice = sc.next().charAt(0);
