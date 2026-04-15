@@ -1,4 +1,4 @@
-package projeto_enums.projeto_01.services;
+package projeto_enums.projeto_01.model.services;
 
 public interface CalculationSalary {
      default double salary(int daysWork,double dayValue,double bonusLevel){

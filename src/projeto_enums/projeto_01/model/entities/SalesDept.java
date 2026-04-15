@@ -1,6 +1,6 @@
-package projeto_enums.projeto_01.entities;
+package projeto_enums.projeto_01.model.entities;
 
-import projeto_enums.projeto_01.enums.WorkerLevel;
+import projeto_enums.projeto_01.model.enums.WorkerLevel;
 
 public class SalesDept extends Department {
 

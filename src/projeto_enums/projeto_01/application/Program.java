@@ -1,10 +1,8 @@
 package projeto_enums.projeto_01.application;
 
-import projeto_enums.projeto_01.entities.*;
-import projeto_enums.projeto_01.enums.WorkerLevel;
-import projeto_enums.projeto_01.services.CalculationSalary;
+import projeto_enums.projeto_01.model.entities.*;
+import projeto_enums.projeto_01.model.enums.WorkerLevel;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

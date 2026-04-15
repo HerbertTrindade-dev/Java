@@ -1,4 +1,4 @@
-package projeto_enums.projeto_01.enums;
+package projeto_enums.projeto_01.model.enums;
 
 public enum WorkerLevel {
 

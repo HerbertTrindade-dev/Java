@@ -1,7 +1,7 @@
-package projeto_enums.projeto_01.entities;
+package projeto_enums.projeto_01.model.entities;
 
-import projeto_enums.projeto_01.services.CalculationBonusAmount;
-import projeto_enums.projeto_01.services.CalculationSalary;
+import projeto_enums.projeto_01.model.services.CalculationBonusAmount;
+import projeto_enums.projeto_01.model.services.CalculationSalary;
 import java.time.LocalDate;
 
 public class Worker implements CalculationSalary, CalculationBonusAmount {
