@@ -34,7 +34,7 @@ public class Program {
             Department dpt = null;
             System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
             int level = sc.nextInt();
-            System.out.print("Digite o nome do departamento:[Administracao/Vendas/Recepcao");
+            System.out.print("Digite o nome do departamento:[Administracao/Vendas/Recepcao]");
             sc.nextLine();
             String nameDepartment = sc.nextLine().toLowerCase();
             if (nameDepartment.equals("administracao")) {
