@@ -1,5 +1,7 @@
 package projeto_enums.projeto_02.model.entities;
 
+import projeto_enums.projeto_02.model.enums.OrderStatus;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

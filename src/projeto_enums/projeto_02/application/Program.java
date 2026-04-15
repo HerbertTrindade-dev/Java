@@ -4,7 +4,7 @@ import projeto_enums.projeto_02.model.entities.Client;
 import projeto_enums.projeto_02.model.entities.Order;
 import projeto_enums.projeto_02.model.entities.OrderItem;
 import projeto_enums.projeto_02.model.entities.Product;
-import projeto_enums.projeto_02.model.entities.OrderStatus;
+import projeto_enums.projeto_02.model.enums.OrderStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,9 +22,9 @@ public class Program {
         System.out.println("Digite os dados do cliente:");
         System.out.print("Nome: ");
         String name = sc.nextLine();
-        System.out.print("Digite o seu email: ");
+        System.out.print("Email: ");
         String email = sc.nextLine();
-        System.out.print("Digite a data do seu aniversario (DD/MM/YYYY): ");
+        System.out.print("Data de nascimento (DD/MM/YYYY): ");
         LocalDate birthDate = LocalDate.parse(sc.nextLine(), fmt);
         System.out.println("Digite os dados dos pedidos:");
         System.out.print("Digite o numero do Status do produto: [0-PAGAMENTO_PENDENTE/1-PROCESSANDO/2-ENVIADO/3-ENTREGUE]");

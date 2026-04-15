@@ -1,6 +1,6 @@
 package projeto_enums.projeto_02.model.entities;
 
-public class Product {
+public abstract class Product {
 
     private String name;
     private Double price;
