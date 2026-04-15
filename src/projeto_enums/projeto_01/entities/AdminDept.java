@@ -1,5 +1,7 @@
 package projeto_enums.projeto_01.entities;
 
+import projeto_enums.projeto_01.enums.WorkerLevel;
+
 public class AdminDept extends Department {
 
     public AdminDept() {
@@ -9,8 +11,12 @@ public class AdminDept extends Department {
         super(additional);
     }
 
+    public AdminDept(Integer additional, WorkerLevel level, String name) {
+        super(additional,level, name);
+    }
+
     @Override
-    public double getDayWorkSalary() {
+    public double getDayValue() {
         return 150.00;
     }
 
@@ -24,13 +30,4 @@ public class AdminDept extends Department {
         return 500.00;
     }
 
-    @Override
-    public void addWorker(Worker worker) {
-        super.addWorker(worker);
-    }
-
-    @Override
-    public void removeWorker(Worker worker) {
-        super.removeWorker(worker);
-    }
 }

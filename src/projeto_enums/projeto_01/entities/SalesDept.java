@@ -1,5 +1,7 @@
 package projeto_enums.projeto_01.entities;
 
+import projeto_enums.projeto_01.enums.WorkerLevel;
+
 public class SalesDept extends Department {
 
     public SalesDept() {
@@ -9,13 +11,17 @@ public class SalesDept extends Department {
         super(additional);
     }
 
+    public SalesDept(Integer additional ,WorkerLevel level, String name) {
+        super(additional, level, name);
+    }
+
     @Override
     public double getOvertimeRate() {
         return 1;
     }
 
     @Override
-    public double getDayWorkSalary() {
+    public double getDayValue() {
         return 100.00;
     }
 
@@ -24,15 +30,6 @@ public class SalesDept extends Department {
         return 25.00;
     }
 
-    @Override
-    public void addWorker(Worker worker) {
-        super.addWorker(worker);
-    }
-
-    @Override
-    public void removeWorker(Worker worker) {
-        super.removeWorker(worker);
-    }
 
 }
 

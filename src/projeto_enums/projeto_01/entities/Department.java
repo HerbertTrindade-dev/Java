@@ -1,23 +1,35 @@
 package projeto_enums.projeto_01.entities;
 
+import projeto_enums.projeto_01.enums.WorkerLevel;
 import projeto_enums.projeto_01.services.CalculationSalary;
-import projeto_enums.projeto_01.services.CalculationSalaryAdditional;
+import projeto_enums.projeto_01.services.CalculationBonus;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Department implements CalculationSalary, CalculationSalaryAdditional {
+public abstract class Department implements CalculationSalary, CalculationBonus {
 
     private Integer additional;
-    private List<Worker> workerList = new ArrayList<>();
+    private WorkerLevel level;
+    private String name;
 
 
 
     public Department() {
     }
-
     public Department(Integer additional) {
         this.additional = additional;
+    }
+
+    public Department(Integer additional,WorkerLevel level,String name) {
+        this.additional = additional;
+        this.level = level;
+        this.name = name;
+    }
+
+    public WorkerLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(WorkerLevel level) {
+        this.level = level;
     }
 
     public Integer getAdditional() {
@@ -28,30 +40,21 @@ public abstract class Department implements CalculationSalary, CalculationSalary
         this.additional = additional;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public double getOvertimeRate() {
         return 0;
     }
 
-    public double getDayWorkSalary() {
+    public double getDayValue() {
         return 0;
     }
 
     public double getTax() {
         return 0;
     }
-
-    public List<Worker> getWorkerList() {
-        return workerList;
-    }
-
-    public void addWorker(Worker worker){
-        workerList.add(worker);
-   }
-
-    public void removeWorker(Worker worker){
-        workerList.remove(worker);
-    }
-
 
 
 }

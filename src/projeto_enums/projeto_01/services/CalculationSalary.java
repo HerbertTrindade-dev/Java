@@ -5,8 +5,8 @@ import projeto_enums.projeto_01.entities.Worker;
 import projeto_enums.projeto_01.enums.WorkerLevel;
 
 public interface CalculationSalary {
-     default double salary(WorkerLevel level, Worker work, Department dpt){
-         return level.getIncreaseSalary() * work.getDaysWork() * dpt.getDayWorkSalary();
-
+     default double salary(int daysWork,double dayValue,WorkerLevel level){
+         double base = daysWork * dayValue;
+         return base *( 1 + level.getIncreaseSalary());
     }
 }

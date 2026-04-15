@@ -1,6 +1,7 @@
 package projeto_enums.projeto_01.entities;
 
 import projeto_enums.projeto_01.enums.WorkerLevel;
+import projeto_enums.projeto_01.services.CalculationSalary;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,25 +10,19 @@ import java.util.List;
 public class Worker {
 
     private String name;
-    private WorkerLevel level;
     private LocalDate birthday;
     private Integer daysWork;
-
     private Department department;
-    private List<HourContract> hourContract = new ArrayList<>();
+
 
     public Worker(){
     }
 
-    public Worker(String name, WorkerLevel level, LocalDate birthday, Department department,Integer daysWork) {
+    public Worker(String name, LocalDate birthday,Integer daysWork,Department department) {
         this.name = name;
-        this.level = level;
         this.birthday = birthday;
-        this.department = department;
         this.daysWork = daysWork;
-    }
-
-    public Worker(String name, WorkerLevel workerLevel, LocalDate birthday, Department dept) {
+        this.department = department;
     }
 
     public String getName(){
@@ -36,14 +31,6 @@ public class Worker {
 
     public void setName(String name){
         this.name = name;
-    }
-
-    public WorkerLevel getLevel(){
-        return level;
-    }
-
-    public void setLevel(WorkerLevel level){
-        this.level = level;
     }
 
     public LocalDate getBirthday(){
@@ -62,20 +49,20 @@ public class Worker {
         this.daysWork = daysWork;
     }
 
+
     public Department getDepartment() {
         return department;
     }
 
-    public List<HourContract> getHourContract(){
-        return hourContract;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
-    public void addContract(HourContract hourContract){
-        this.hourContract.add(hourContract);
-    }
+    //public double bonus(){
+      //  double bonus = department.bonus(department.getAdditional())
+    //}
 
-    public void removeContract(HourContract hourContract){
-        this.hourContract.remove(hourContract);
+    public double TotalIncome(){
+        double salary = department.salary(this.daysWork,department.getDayValue(),department.getLevel());
     }
-
 }
