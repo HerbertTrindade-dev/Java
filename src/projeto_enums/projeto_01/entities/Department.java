@@ -1,24 +1,23 @@
 package projeto_enums.projeto_01.entities;
 
 import projeto_enums.projeto_01.enums.WorkerLevel;
-import projeto_enums.projeto_01.services.CalculationSalary;
-import projeto_enums.projeto_01.services.CalculationBonus;
 
-public abstract class Department  {
+
+public abstract class Department {
 
     private Integer additional;
     private WorkerLevel level;
     private String name;
 
 
-
     public Department() {
     }
+
     public Department(Integer additional) {
         this.additional = additional;
     }
 
-    public Department(Integer additional,WorkerLevel level,String name) {
+    public Department(Integer additional, WorkerLevel level, String name) {
         this.additional = additional;
         this.level = level;
         this.name = name;
@@ -44,13 +43,9 @@ public abstract class Department  {
         return name;
     }
 
-    public double getDayValue() {
-        return 0;
-    }
+    public abstract double getDayValue();
 
-    public double getBonus() {
-        return 0;
-    }
+    public abstract double getBonus();
 }
 
 
