@@ -59,8 +59,8 @@ public class Program {
             System.out.println("Data de nascimento:"+wk.getBirthday());
             System.out.println("Departamento:"+wk.getDepartment().getName());
             System.out.println("Senioridade:"+wk.getDepartment().getLevel());
-            System.out.println("Bonus: R$"+wk.bonus());
-            System.out.println("Salario: R$"+wk.totalSalay());
+            System.out.println("Bonus: R$"+wk.bonusAmount());
+            System.out.println("Salario: R$"+wk.salary());
 
 
         }

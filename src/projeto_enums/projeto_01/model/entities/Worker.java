@@ -55,13 +55,15 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
         this.department = department;
     }
 
-    public double bonus(){
-        double bonusSalary = bonusAmount(department.getAdditional(),department.getBonus());
-        return bonusSalary;
+    @Override
+    public double bonusAmount() {
+        return department.getAdditional() * department.getBonus();
     }
 
-    public double totalSalay(){
-        double baseSalary =  salary(this.daysWork,department.getDayValue(),department.getLevel().getIncreaseSalary());
-        return baseSalary + bonus();
+    @Override
+    public double salary() {
+        double baseSalary = this.daysWork * department.getDayValue();
+        return  baseSalary *(1+ department.getLevel().getIncreaseSalary()) + bonusAmount();
     }
+
 }
