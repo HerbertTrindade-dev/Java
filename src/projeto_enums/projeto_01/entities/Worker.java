@@ -1,13 +1,14 @@
 package projeto_enums.projeto_01.entities;
 
 import projeto_enums.projeto_01.enums.WorkerLevel;
+import projeto_enums.projeto_01.services.CalculationBonus;
 import projeto_enums.projeto_01.services.CalculationSalary;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Worker {
+public class Worker implements CalculationSalary, CalculationBonus {
 
     private String name;
     private LocalDate birthday;
@@ -58,11 +59,13 @@ public class Worker {
         this.department = department;
     }
 
-    //public double bonus(){
-      //  double bonus = department.bonus(department.getAdditional())
-    //}
+    public double bonus(){
+        double bonusSalary = bonus(department.getAdditional(),department.getBonus());
+        return bonusSalary;
+    }
 
-    public double TotalIncome(){
-        double salary = department.salary(this.daysWork,department.getDayValue(),department.getLevel());
+    public double totalSalay(){
+        double baseSalary =  salary(this.daysWork,department.getDayValue(),department.getLevel().getIncreaseSalary());
+        return baseSalary + bonus();
     }
 }

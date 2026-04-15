@@ -21,12 +21,7 @@ public class AdminDept extends Department {
     }
 
     @Override
-    public double getOvertimeRate() {
-        return 120;
-    }
-
-    @Override
-    public double getTax() {
+    public double getBonus() {
         return 500.00;
     }
 

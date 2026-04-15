@@ -16,17 +16,12 @@ public class RecepcionDept extends Department {
     }
 
     @Override
-    public double getOvertimeRate() {
-        return 180;
-    }
-
-    @Override
     public double getDayValue() {
         return 80.00;
     }
 
     @Override
-    public double getTax() {
+    public double getBonus() {
         return 2.5;
     }
 

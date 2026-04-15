@@ -4,7 +4,7 @@ import projeto_enums.projeto_01.enums.WorkerLevel;
 import projeto_enums.projeto_01.services.CalculationSalary;
 import projeto_enums.projeto_01.services.CalculationBonus;
 
-public abstract class Department implements CalculationSalary, CalculationBonus {
+public abstract class Department  {
 
     private Integer additional;
     private WorkerLevel level;
@@ -44,19 +44,13 @@ public abstract class Department implements CalculationSalary, CalculationBonus 
         return name;
     }
 
-    public double getOvertimeRate() {
-        return 0;
-    }
-
     public double getDayValue() {
         return 0;
     }
 
-    public double getTax() {
+    public double getBonus() {
         return 0;
     }
-
-
 }
 
 

@@ -35,9 +35,9 @@ public class Program {
             int daysWork = sc.nextInt();
             Department dpt = null;
             System.out.print("Nivel-[0-JUNIOR;1-PLENO;2-SENIOR]:");
-            sc.nextLine();
             int level = sc.nextInt();
             System.out.print("Digite o nome do departamento:[Administracao/Vendas/Recepcao");
+            sc.nextLine();
             String nameDepartment = sc.nextLine().toLowerCase();
             if (nameDepartment.equals("administracao")) {
                 System.out.print("Digite a quantidade de projetos feitos:");
@@ -56,13 +56,13 @@ public class Program {
         }
         for (Worker wk : workers){
             System.out.println("------------------------------");
-            System.out.println("====RELATORIO SALARIAL====");
-            System.out.print("Nome:"+wk.getName());
+            System.out.println("======RELATORIO SALARIAL======");
+            System.out.println("Nome:"+wk.getName());
             System.out.println("Data de nascimento:"+wk.getBirthday());
             System.out.println("Departamento:"+wk.getDepartment().getName());
             System.out.println("Senioridade:"+wk.getDepartment().getLevel());
-            System.out.println("Salario:"+wk.TotalIncome());
-            System.out.println("Bonus:");
+            System.out.println("Bonus: R$"+wk.bonus());
+            System.out.println("Salario: R$"+wk.totalSalay());
 
 
         }

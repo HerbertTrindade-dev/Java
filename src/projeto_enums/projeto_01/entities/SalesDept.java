@@ -15,10 +15,6 @@ public class SalesDept extends Department {
         super(additional, level, name);
     }
 
-    @Override
-    public double getOvertimeRate() {
-        return 1;
-    }
 
     @Override
     public double getDayValue() {
@@ -26,7 +22,7 @@ public class SalesDept extends Department {
     }
 
     @Override
-    public double getTax() {
+    public double getBonus() {
         return 25.00;
     }
 
