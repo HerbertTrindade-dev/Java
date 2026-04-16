@@ -43,7 +43,7 @@ public class Program {
             double productPrice = sc.nextDouble();
             System.out.print("Quantidade: ");
             int quantity = sc.nextInt();
-            OrderItem orderItems = new OrderItem(quantity,new Product(productName,productPrice));
+            ;
 
             order.addItem(orderItems);
         }

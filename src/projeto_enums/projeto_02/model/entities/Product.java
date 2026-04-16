@@ -28,4 +28,6 @@ public abstract class Product {
     public void setPrice(Double price){
         this.price = price;
     }
+
+    public abstract double totalValue();
 }
