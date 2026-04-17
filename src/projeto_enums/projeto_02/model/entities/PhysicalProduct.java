@@ -1,6 +1,6 @@
 package projeto_enums.projeto_02.model.entities;
 
-public class PhysicalProduct extends Product {
+public abstract class PhysicalProduct extends Product {
 
     private Double weight;
     private Double dimension;
