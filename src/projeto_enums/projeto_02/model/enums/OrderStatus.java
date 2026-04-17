@@ -37,6 +37,15 @@ public enum OrderStatus {
 
     public abstract String orderStatusPrint();
 
+    public static String searchId(int id){
+       for (OrderStatus status : OrderStatus.values()){
+           if (status.getProcessNumber() == id) {
+               return status.orderName;
+           }
+       }
+       return null;
+    }
+
     public int getProcessNumber() {
         return processNumber;
     }
