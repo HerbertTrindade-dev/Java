@@ -51,9 +51,9 @@ public class Program {
                 LocalDate dateExpiration = LocalDate.parse(sc.nextLine(),fmt);
                 pdt = new DigitalProduct(productName,productPrice,link,dateExpiration);
             } else if (choiceTypeProduct == 2) {
-                System.out.print("Digite o peso: Kg");
+                System.out.print("Digite o peso: g");
                 double weight = sc.nextDouble();
-                System.out.print("Digite o comprimento: m");
+                System.out.print("Digite o comprimento: cm");
                 double dimension = sc.nextDouble();
                 System.out.print("Escolha o produto: [1-livro/2-Eletronico]");
                 int choicePhysicalProduct = sc.nextInt();
