@@ -1,4 +1,4 @@
-package projeto_POO.projeto_02.model.services;
+package projeto_POO.projeto_02.model.interfaces;
 
 public interface Shippable {
      double calculateShipping();

@@ -1,11 +1,5 @@
 package projeto_POO.projeto_02.model.entities;
 
-import projeto_POO.projeto_02.model.services.Shippable;
-import projeto_POO.projeto_02.model.services.Taxable;
-
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
-
 public abstract class PhysicalProduct extends Product {
 
     private Double weight;

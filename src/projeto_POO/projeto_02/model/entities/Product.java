@@ -1,7 +1,5 @@
 package projeto_POO.projeto_02.model.entities;
 
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public abstract class Product {
 

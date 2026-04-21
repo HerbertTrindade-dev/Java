@@ -61,7 +61,7 @@ public class OrderBuilder {
     private Product creatProduct(int code, String name, double price) {
         ProductType type = ProductType.fromCode(code);
         return switch (type) {
-            case PRODUTO_DIGTAl -> createDigitalProduct(name, price);
+            case PRODUTO_DIGTAL -> createDigitalProduct(name, price);
             case PRODUTO_FISICO -> createPhysicalProduct(name, price);
         };
     }
@@ -81,7 +81,7 @@ public class OrderBuilder {
         ProductOrigin origin = ProductOrigin.fromCode(code);
         return switch (origin) {
             case PRODUTO_IMPORTADO -> new ImportedProduct(name, price, weight, dimension);
-            case PRODUTO_NACIONAL -> new NacionalProduct(name, price, weight, dimension);
+            case PRODUTO_NACIONAL -> new LocalProduct(name, price, weight, dimension);
         };
     }
 

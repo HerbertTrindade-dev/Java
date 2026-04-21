@@ -3,6 +3,8 @@ package projeto_POO.projeto_02.model.services;
 import projeto_POO.projeto_02.model.entities.DigitalProduct;
 import projeto_POO.projeto_02.model.entities.Order;
 import projeto_POO.projeto_02.model.entities.OrderItem;
+import projeto_POO.projeto_02.model.interfaces.Shippable;
+import projeto_POO.projeto_02.model.interfaces.Taxable;
 
 import java.io.*;
 import java.time.format.DateTimeFormatter;
@@ -19,13 +21,13 @@ public class OrderReport {
         sb.append("Data: ").append(order.getMoment().format(fmt)).append("\n");
         sb.append("Status: ").append(order.getStatus()).append("\n");
         sb.append("Cliente: ").append(order.getClient().getName()).append("\n");
-        sb.append("Data nascimento: ").append(order.getClient().getBirthDate()).append("\n");
+        sb.append("Data nascimento: ").append(order.getClient().getBirthDate().format(fmt)).append("\n");
         sb.append("Email: ").append(order.getClient().getEmail()).append("\n");
         sb.append("----------------------------------------------\n");
         sb.append("ITEMS:\n");
 
         for (OrderItem item : order.getItems()) {
-            sb.append(" - ").append(item.getProduct().getName())
+            sb.append(" - ").append(item.getProduct().getName()).append("\n")
                     .append(" Qtd: ").append(item.getQuantity()).append(" x")
                     .append(" | Valor R$:").append(String.format("%.2f", item.getProduct().getPrice()))
                     .append(" | Valor com taxas R$:").append(String.format("%.2f", item.getProduct().totalValue()))
@@ -38,7 +40,8 @@ public class OrderReport {
                 sb.append(" | ").append(shippable.shippingInfo());
             }
             if (item.getProduct() instanceof DigitalProduct digitalProduct) {
-                sb.append(" | Link:").append(digitalProduct.getLink()).append(" | Data de expiracao:").append(digitalProduct.getDateExpiration().format(fmt));
+                sb.append("\n").append(" | Link:").append(digitalProduct.getLink()).append(" | Data de expiracao:")
+                        .append(digitalProduct.getDateExpiration().format(fmt));
             }
             sb.append("\n");
         }

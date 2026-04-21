@@ -21,7 +21,7 @@ public class Program {
         orderBuilder.readItem(order);
         OrderReport orderReport = new OrderReport();
         System.out.println(orderReport.printer(order));
-        orderReport.saveToFile(order, "/home/herbert/Documentos/relatorio_pedido.txt");
+        orderReport.saveToFile(order, "relatorio_pedido.txt");
         sc.close();
     }
 }

@@ -1,0 +1,20 @@
+==============================================
+               RESUMO DO PEDIDO               
+==============================================
+Data: 21/04/2026
+Status: ENVIADO
+Cliente: Tinoco da Silva
+Data nascimento: 15/09/2001
+Email: tinocosilva.com.br
+----------------------------------------------
+ITEMS:
+ - Planilha de treino
+ Qtd: 5 x | Valor R$:26.99 | Valor com taxas R$:28.34 | Valor Total R$:141.70 | Taxa: R$1.35
+ | Link:www.treinemelhor.com.br | Data de expiracao:16/09/2040
+ - Bicicleta Sense Aro 29
+ Qtd: 2 x | Valor R$:15.00 | Valor com taxas R$:594.50 | Valor Total R$:1189.00 | Taxa: R$1.50 | Frete: R$578.00
+ - Notebook Acer Aspire 5
+ Qtd: 3 x | Valor R$:5500.00 | Valor com taxas R$:5610.00 | Valor Total R$:16830.00 | Frete: R$110.00
+-------------------------------------------
+TOTAL: R$18160.70
+=================================================

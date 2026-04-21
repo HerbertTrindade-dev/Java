@@ -1,11 +1,10 @@
 package projeto_POO.projeto_02.model.entities;
 
-import projeto_POO.projeto_02.model.services.Shippable;
-import projeto_POO.projeto_02.model.services.Taxable;
+import projeto_POO.projeto_02.model.interfaces.Shippable;
 
-public class NacionalProduct extends PhysicalProduct implements Shippable {
+public class LocalProduct extends PhysicalProduct implements Shippable {
 
-    public NacionalProduct(String name, Double price, Double weight, Double dimension) {
+    public LocalProduct(String name, Double price, Double weight, Double dimension) {
         super(name, price, weight, dimension);
     }
 

@@ -1,12 +1,12 @@
 package projeto_POO.projeto_02.model.enums;
 
 public enum ProductType {
-    PRODUTO_DIGTAl(1),
+    PRODUTO_DIGTAL(1),
     PRODUTO_FISICO(2);
 
     private final int code;
 
-    private ProductType(int code){
+    ProductType(int code){
         this.code = code;
     }
 

@@ -1,7 +1,7 @@
 package projeto_POO.projeto_02.model.entities;
 
-import projeto_POO.projeto_02.model.services.Shippable;
-import projeto_POO.projeto_02.model.services.Taxable;
+import projeto_POO.projeto_02.model.interfaces.Shippable;
+import projeto_POO.projeto_02.model.interfaces.Taxable;
 
 public class ImportedProduct extends PhysicalProduct implements Taxable, Shippable {
 
@@ -11,11 +11,11 @@ public class ImportedProduct extends PhysicalProduct implements Taxable, Shippab
 
     @Override
     public double totalValue() {
-        return getPrice() + calculateShipping() + calculationTax();
+        return getPrice() + calculateShipping() + calculateTax();
     }
 
     @Override
-    public double calculationTax() {
+    public double calculateTax() {
         return getPrice() * 0.10;
     }
 
