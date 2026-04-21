@@ -1,10 +1,8 @@
 package projeto_POO.projeto_02.application;
 
 import projeto_POO.projeto_02.model.entities.*;
-import projeto_POO.projeto_02.model.enums.OrderStatus;
+import projeto_POO.projeto_02.model.services.OrderReport;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
@@ -21,10 +19,9 @@ public class Program {
         Client client = orderBuilder.readClient();
         Order order = orderBuilder.readOrder(client);
         orderBuilder.readItem(order);
-
-        System.out.println("\nRESUMO DO PEDIDO:");
-        System.out.println();
-
+        OrderReport orderReport = new OrderReport();
+        System.out.println(orderReport.printer(order));
+        orderReport.saveToFile(order, "/home/herbert/Documentos/relatorio_pedido.txt");
         sc.close();
     }
 }

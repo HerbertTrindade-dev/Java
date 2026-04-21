@@ -43,7 +43,7 @@ public enum OrderStatus {
                return status;
            }
        }
-       return null;
+       throw new IllegalArgumentException("Status incorreto.");
     }
 
     public int getProcessNumber() {

@@ -1,8 +1,11 @@
 package projeto_POO.projeto_02.model.entities;
 
+import projeto_POO.projeto_02.model.services.Shippable;
+import projeto_POO.projeto_02.model.services.Taxable;
+
 import java.time.LocalDate;
 
-public class DigitalProduct extends Product {
+public class DigitalProduct extends Product implements Taxable {
 
     private String link;
     private LocalDate dateExpiration;
@@ -36,6 +39,16 @@ public class DigitalProduct extends Product {
 
     @Override
     public double totalValue() {
-        return 0;
+        return getPrice() + calculationTax();
+    }
+
+    @Override
+    public double calculationTax() {
+        return getPrice() * 0.05;
+    }
+
+    @Override
+    public String taxInfo() {
+        return Taxable.super.taxInfo();
     }
 }

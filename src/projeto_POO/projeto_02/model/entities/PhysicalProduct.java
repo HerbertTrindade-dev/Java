@@ -1,9 +1,12 @@
 package projeto_POO.projeto_02.model.entities;
 
+import projeto_POO.projeto_02.model.services.Shippable;
+import projeto_POO.projeto_02.model.services.Taxable;
+
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class PhysicalProduct extends Product {
+public abstract class PhysicalProduct extends Product {
 
     private Double weight;
     private Double dimension;
@@ -33,7 +36,5 @@ public class PhysicalProduct extends Product {
     }
 
     @Override
-    public double totalValue() {
-        return 0;
-    }
+    public abstract double totalValue();
 }

@@ -1,18 +1,11 @@
 package projeto_POO.projeto_02.model.entities;
 
-import projeto_POO.projeto_02.model.services.Promotion;
-
 public class OrderItem  {
 
     private Integer quantity;
     private Product product;
-    private Promotion promotion;
 
     public OrderItem(){
-    }
-
-    public OrderItem(Integer quantity){
-        this.quantity = quantity;
     }
 
     public OrderItem(Integer quantity, Product product) {
@@ -21,9 +14,6 @@ public class OrderItem  {
 
     }
 
-    public Promotion getPromotion() {
-        return promotion;
-    }
 
     public Integer getQuantity(){
         return quantity;
@@ -42,7 +32,7 @@ public class OrderItem  {
     }
 
     public Double subTotal(){
-        return quantity * product.getPrice();
+        return quantity * product.totalValue();
     }
 
 
