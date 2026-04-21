@@ -1,6 +1,9 @@
 package projeto_POO.projeto_02.model.entities;
 
-public abstract class PhysicalProduct extends Product {
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class PhysicalProduct extends Product {
 
     private Double weight;
     private Double dimension;
@@ -10,6 +13,8 @@ public abstract class PhysicalProduct extends Product {
         this.weight = weight;
         this.dimension = dimension;
     }
+
+
 
     public Double getWeight() {
         return weight;

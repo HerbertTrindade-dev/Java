@@ -1,5 +1,8 @@
 package projeto_POO.projeto_02.model.entities;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 public abstract class Product {
 
     private String name;
@@ -12,6 +15,8 @@ public abstract class Product {
         this.name = name;
         this.price = price;
     }
+
+
 
     public String getName(){
         return name;

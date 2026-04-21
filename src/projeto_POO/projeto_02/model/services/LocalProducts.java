@@ -4,6 +4,6 @@ public class LocalProducts implements Taxable {
 
     @Override
     public double CalculationTax() {
-        ;
+        return 0.0;
     }
 }
