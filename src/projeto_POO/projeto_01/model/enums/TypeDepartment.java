@@ -1,9 +1,9 @@
 package projeto_POO.projeto_01.model.enums;
 
 public enum TypeDepartment {
-    ADMINISTRACAO(0),
-    VENDAS(1),
-    RECEPCAO(2);
+    ADMINISTRACAO(1),
+    VENDAS(2),
+    RECEPCAO(3);
 
     private final int code;
 

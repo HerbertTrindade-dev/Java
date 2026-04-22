@@ -19,19 +19,21 @@ public class Program {
 
 
 
-        for (Worker wk : workers){
-            System.out.println("------------------------------");
-            System.out.println("======RELATORIO SALARIAL======");
-            System.out.println("Nome:"+wk.getName());
-            System.out.println("Data de nascimento:"+wk.getBirthday());
-            System.out.println("Departamento:"+wk.getDepartment().getName());
-            System.out.println("Senioridade:"+wk.getDepartment().getLevel());
-            System.out.println("Bonus: R$"+wk.bonusAmount());
-            System.out.println("Salario: R$"+wk.salary());
+        System.out.println("=======REGISTRO SALARIAL========");
+        System.out.print("Quantidade de Funcionários:");
+        int qtdEmployee = sc.nextInt();
+        for (int i = 0; i < qtdEmployee; i++) {
+            System.out.println("----------------------------------------");
+            System.out.println("Digite os dados do servidor #" + (1 + i) + ":");
+
+            int level = sc.nextInt();
+            System.out.print();
+            sc.nextLine();
+           
+
 
 
         }
-
 
     }
 }

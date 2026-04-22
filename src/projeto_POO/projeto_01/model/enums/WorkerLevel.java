@@ -2,9 +2,9 @@ package projeto_POO.projeto_01.model.enums;
 
 public enum WorkerLevel {
 
-    JUNIOR(0.05,0),
-    PLENO(0.10,1),
-    SENIOR(0.15,2);
+    JUNIOR(0.05,1),
+    PLENO(0.10,2),
+    SENIOR(0.15,3);
 
     private final double increaseSalary;
     private final int code;

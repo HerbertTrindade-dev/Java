@@ -8,23 +8,16 @@ import java.util.List;
 
 public abstract class Department {
 
-    private Integer additional;
     private WorkerLevel level;
-    private String name;
     private List<Worker> workers = new ArrayList<>();
 
 
     public Department() {
     }
 
-    public Department(Integer additional) {
-        this.additional = additional;
-    }
 
-    public Department(Integer additional, WorkerLevel level, String name) {
-        this.additional = additional;
+    public Department( WorkerLevel level) {
         this.level = level;
-        this.name = name;
     }
 
     public void addWorker(Worker worker){
@@ -41,18 +34,6 @@ public abstract class Department {
 
     public void setLevel(WorkerLevel level) {
         this.level = level;
-    }
-
-    public Integer getAdditional() {
-        return additional;
-    }
-
-    public void setAdditional(Integer additional) {
-        this.additional = additional;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public abstract double getDayValue();
