@@ -20,7 +20,6 @@ public class Program {
         System.out.println("=======REGISTRO SALARIAL========");
         System.out.print("Quantidade de Funcionários:");
         int qtdEmployee = sc.nextInt();
-        List<Worker> workers = new ArrayList<>();
         for (int i = 0; i < qtdEmployee; i++) {
             System.out.println("----------------------------------------");
             System.out.println("Digite os dados do servidor #" + (1 + i) + ":");
@@ -50,7 +49,7 @@ public class Program {
                 int additionalRecepcion = sc.nextInt();
                 dpt = new RecepcionDept(additionalRecepcion,WorkerLevel.searchId(level),nameDepartment);
             }
-            workers.add(new Worker(name,birthday,daysWork,dpt));
+            Department dpt = new Department();
         }
         for (Worker wk : workers){
             System.out.println("------------------------------");

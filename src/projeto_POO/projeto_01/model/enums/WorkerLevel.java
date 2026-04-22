@@ -7,28 +7,28 @@ public enum WorkerLevel {
     SENIOR(0.15,2);
 
     private final double increaseSalary;
-    private final int id;
+    private final int code;
 
-    WorkerLevel (double increaseSalary,int id){
+    WorkerLevel (double increaseSalary,int code){
         this.increaseSalary = increaseSalary;
-        this.id = id;
+        this.code = code;
     }
 
-    public int getId() {
-        return id;
+    public int getCode() {
+        return code;
     }
 
     public double getIncreaseSalary() {
         return increaseSalary;
     }
 
-    public static WorkerLevel searchId(int id){
+    public static WorkerLevel fromCode(int code){
         for (WorkerLevel level : WorkerLevel.values()){
-            if (level.getId() == id) {
+            if (level.getCode() == code) {
                 return level;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Código não econtrado: "+code);
     }
 
 

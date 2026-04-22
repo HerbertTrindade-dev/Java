@@ -1,4 +1,4 @@
-package projeto_POO.projeto_01.model.services;
+package projeto_POO.projeto_01.model.interfaces;
 
 
 public interface CalculationBonusAmount {

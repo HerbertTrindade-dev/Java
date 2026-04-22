@@ -1,7 +1,7 @@
 package projeto_POO.projeto_01.model.entities;
 
-import projeto_POO.projeto_01.model.services.CalculationBonusAmount;
-import projeto_POO.projeto_01.model.services.CalculationSalary;
+import projeto_POO.projeto_01.model.interfaces.CalculationBonusAmount;
+import projeto_POO.projeto_01.model.interfaces.CalculationSalary;
 import java.time.LocalDate;
 
 public class Worker implements CalculationSalary, CalculationBonusAmount {
