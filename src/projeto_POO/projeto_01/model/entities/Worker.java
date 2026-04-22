@@ -9,17 +9,15 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
     private String name;
     private LocalDate birthday;
     private Integer daysWork;
-    private Department department;
 
 
     public Worker(){
     }
 
-    public Worker(String name, LocalDate birthday,Integer daysWork,Department department) {
+    public Worker(String name, LocalDate birthday,Integer daysWork) {
         this.name = name;
         this.birthday = birthday;
         this.daysWork = daysWork;
-        this.department = department;
     }
 
     public String getName(){
@@ -44,15 +42,6 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
 
     public void setDaysWork(Integer daysWork) {
         this.daysWork = daysWork;
-    }
-
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
     }
 
     @Override
