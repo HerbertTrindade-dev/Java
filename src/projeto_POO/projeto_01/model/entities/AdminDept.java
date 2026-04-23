@@ -4,11 +4,11 @@ import projeto_POO.projeto_01.model.enums.WorkerLevel;
 
 public class AdminDept extends Department {
 
-    private Integer qtdProjects
+    private Integer qtdProjects;
     public AdminDept() {
     }
 
-    public AdminDept(Integer qtdProjects, WorkerLevel level) {
+    public AdminDept( WorkerLevel level,Integer qtdProjects) {
         super(level);
         this.qtdProjects = qtdProjects;
     }

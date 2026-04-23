@@ -9,6 +9,7 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
     private String name;
     private LocalDate birthday;
     private Integer daysWork;
+    private Department department;
 
 
     public Worker(){

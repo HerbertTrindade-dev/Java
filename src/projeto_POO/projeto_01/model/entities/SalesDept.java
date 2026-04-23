@@ -3,18 +3,22 @@ package projeto_POO.projeto_01.model.entities;
 import projeto_POO.projeto_01.model.enums.WorkerLevel;
 
 public class SalesDept extends Department {
-
+    private Integer qtdSales;
     public SalesDept() {
     }
 
-    public SalesDept(Integer additional) {
-        super(additional);
+    public SalesDept(WorkerLevel level,int qtdSales) {
+        super(level);
+        this.qtdSales = qtdSales;
     }
 
-    public SalesDept(Integer additional ,WorkerLevel level, String name) {
-        super(additional, level, name);
+    public Integer getQtdSales() {
+        return qtdSales;
     }
 
+    public void setQtdSales(Integer qtdSales) {
+        this.qtdSales = qtdSales;
+    }
 
     @Override
     public double getDayValue() {

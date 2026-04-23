@@ -18,47 +18,48 @@ public class DepartmentBuilder {
         this.sc = sc;
     }
 
-    public Worker readWorker() {
-        System.out.print("Nome: ");
-        sc.nextLine();
-        String name = sc.nextLine();
-        System.out.print("Data de nascimento (DD/MM/YYYY):");
-        LocalDate birthday = LocalDate.parse(sc.next(), fmt);
-        System.out.print("Digite os dias trabalhados:");
-        int daysWork = sc.nextInt();
-        return new Worker(name, birthday, daysWork);
-    }
-
     public WorkerLevel readLevel(){
         int indexLevel = readInt("Nivel-[1-JUNIOR;2-PLENO;3-SENIOR]:");
         return WorkerLevel.fromCode(indexLevel);
     }
 
+
     public Department createDepartment() {
-        int indexDepartment = readInt("Digite o departamento:[1-Administracao/2-Vendas/3-Recepcao]");
-        TypeDepartment type = TypeDepartment.fromCode(indexDepartment);
-        switch (type){
-            case ADMINISTRACAO -> createAdminDept();
-            case VENDAS -> createSalesDept();
-            case RECEPCAO -> createRecepcionDept();
-
+        int qtdWorkers = readInt("Digite a quantidade de trabalhadores:");
+        for (int i=1; i<= qtdWorkers;i++) {
+            System.out.print("Digite os dados do trabalhador #"+i+":");
+            readWorker();
+            int indexDepartment = readInt("Digite o departamento:[1-Administracao/2-Vendas/3-Recepcao]");
+            TypeDepartment type = TypeDepartment.fromCode(indexDepartment);
+            return switch (type) {
+                case ADMINISTRACAO -> createAdminDept();
+                case VENDAS -> createSalesDept();
+                case RECEPCAO -> createRecepcionDept();
+            };
         }
-
     }
 
-    public Department createAdminDept(WorkerLevel level){
+    public Worker readWorker() {
+        System.out.print("Nome: ");
+        String name = sc.nextLine();
+        LocalDate birthday = readDate("Data de nascimento (DD/MM/YYYY):");
+        int daysWork = readInt("Digite os dias trabalhados:");
+        return new Worker(name, birthday, daysWork);
+    }
+
+    public Department createAdminDept(){
         int qtdProjects = readInt("Digite a quantidade de projetos feitos:");
-        return new AdminDept(qtdProjects,level);
+        return new AdminDept(readLevel(),qtdProjects);
     }
 
-    public Department createSalesDept(WorkerLevel level){
+    public Department createSalesDept(){
         int qtdSales = readInt("Digite a quantidade de vendas realizadas:");
-        return new SalesDept(qtdSales,level,name);
+        return new SalesDept(readLevel(),qtdSales);
     }
 
-    public Department createRecepcionDept(WorkerLevel level){
+    public Department createRecepcionDept(){
         int qtdPeoplesAtt = readInt("Digite a quantidade de pessoas atendidas:");
-        return new RecepcionDept(qtdPeoplesAtt,level,name);
+        return new RecepcionDept(readLevel(),qtdPeoplesAtt);
     }
 
     public int readInt(String prompt){

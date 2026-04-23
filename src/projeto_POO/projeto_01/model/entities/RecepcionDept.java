@@ -4,15 +4,12 @@ import projeto_POO.projeto_01.model.enums.WorkerLevel;
 
 public class RecepcionDept extends Department {
 
-    public RecepcionDept() {
-    }
+    private Integer qtdPeoplesAtt;
 
-    public RecepcionDept(Integer additional) {
-        super(additional);
-    }
 
-    public RecepcionDept(Integer additional,  WorkerLevel level, String name) {
-        super(additional, level, name);
+    public RecepcionDept(WorkerLevel level, int qtdPeoplesAtt) {
+        super( level);
+        this.qtdPeoplesAtt = qtdPeoplesAtt;
     }
 
     @Override
