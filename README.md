@@ -31,12 +31,5 @@ Este repositório é o registro da minha jornada para me tornar um desenvolvedor
 
 ---
 
-## Ferramentas Utilizadas
-* **IDE:** IntelliJ IDEA
-* **S.O:** Linux & Windows
-* **Controle de Versão:** Git
-
----
-
 ##  Desenvolvido por
 - **Herbert Trindade** - [LinkedIn](https://www.linkedin.com/in/herbert-trindade-dos-santos-7b7878320/)
