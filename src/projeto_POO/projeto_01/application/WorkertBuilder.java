@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-public class DepartmentBuilder {
+public class WorkertBuilder {
     private final DateTimeFormatter fmt;
     private final Scanner sc;
 
-    public DepartmentBuilder(DateTimeFormatter fmt, Scanner sc){
+    public WorkertBuilder(DateTimeFormatter fmt, Scanner sc){
         this.fmt = fmt;
         this.sc = sc;
     }
@@ -25,10 +25,6 @@ public class DepartmentBuilder {
 
 
     public Department createDepartment() {
-        int qtdWorkers = readInt("Digite a quantidade de trabalhadores:");
-        for (int i=1; i<= qtdWorkers;i++) {
-            System.out.print("Digite os dados do trabalhador #"+i+":");
-            readWorker();
             int indexDepartment = readInt("Digite o departamento:[1-Administracao/2-Vendas/3-Recepcao]");
             TypeDepartment type = TypeDepartment.fromCode(indexDepartment);
             return switch (type) {
@@ -37,14 +33,13 @@ public class DepartmentBuilder {
                 case RECEPCAO -> createRecepcionDept();
             };
         }
-    }
 
     public Worker readWorker() {
         System.out.print("Nome: ");
         String name = sc.nextLine();
         LocalDate birthday = readDate("Data de nascimento (DD/MM/YYYY):");
         int daysWork = readInt("Digite os dias trabalhados:");
-        return new Worker(name, birthday, daysWork);
+        return new Worker(name, birthday, daysWork,createDepartment());
     }
 
     public Department createAdminDept(){
@@ -65,7 +60,7 @@ public class DepartmentBuilder {
     public int readInt(String prompt){
         do {
             try{
-                System.out.println(prompt);
+                System.out.print(prompt);
                 return Integer.parseInt(sc.nextLine().trim());
             }catch (NumberFormatException e){
                 System.out.println("Formato incorreto.Digite um numero inteiro.");
@@ -76,7 +71,7 @@ public class DepartmentBuilder {
     public Double readDouble(String prompt){
         do {
             try{
-                System.out.println(prompt);
+                System.out.print(prompt);
                 return Double.parseDouble(sc.nextLine().trim());
             } catch (NumberFormatException e){
                 System.out.println("Formato incorreto.Digite um numero real.");
@@ -87,7 +82,7 @@ public class DepartmentBuilder {
     public LocalDate readDate(String prompt){
         do {
             try {
-                System.out.println(prompt);
+                System.out.print(prompt);
                 return LocalDate.parse(sc.nextLine().trim(),fmt);
             }catch (DateTimeParseException e){
                 System.out.println("Formato incorreto de data.Utilize (dd/MM/yyyy)");

@@ -1,10 +1,10 @@
 package projeto_POO.projeto_01.model.entities;
 
 import projeto_POO.projeto_01.model.interfaces.CalculationBonusAmount;
-import projeto_POO.projeto_01.model.interfaces.CalculationSalary;
+
 import java.time.LocalDate;
 
-public class Worker implements CalculationSalary, CalculationBonusAmount {
+public class Worker implements CalculationBonusAmount {
 
     private String name;
     private LocalDate birthday;
@@ -12,10 +12,10 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
     private Department department;
 
 
-    public Worker(){
+    public Worker() {
     }
 
-    public Worker(String name, LocalDate birthday,Integer daysWork,Department department) {
+    public Worker(String name, LocalDate birthday, Integer daysWork, Department department) {
         this.name = name;
         this.birthday = birthday;
         this.daysWork = daysWork;
@@ -30,20 +30,20 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
         this.department = department;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public LocalDate getBirthday(){
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday){
-        this.birthday = this.birthday;
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public Integer getDaysWork() {
@@ -54,15 +54,13 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
         this.daysWork = daysWork;
     }
 
-    @Override
-    public double bonusAmount() {
-        return department.getAdditional() * department.getBonus();
-    }
-
-    @Override
     public double salary() {
         double baseSalary = this.daysWork * department.getDayValue();
-        return  baseSalary *(1+ department.getLevel().getIncreaseSalary()) + bonusAmount();
+        return baseSalary * (1 + department.getLevel().getIncreaseSalary()) + bonusAmount();
     }
 
+    @Override
+    public double bonusAmount() {
+        return 0;
+    }
 }

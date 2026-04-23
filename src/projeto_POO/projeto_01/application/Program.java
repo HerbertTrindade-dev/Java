@@ -1,9 +1,6 @@
 package projeto_POO.projeto_01.application;
 
 import projeto_POO.projeto_01.model.entities.*;
-import projeto_POO.projeto_01.model.enums.WorkerLevel;
-
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,23 +13,15 @@ public class Program {
         Locale.setDefault(Locale.US);
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         Scanner sc = new Scanner(System.in);
+        WorkertBuilder builder = new WorkertBuilder(fmt,sc);
 
-
-
+        List<Worker> workers = new ArrayList<>();
         System.out.println("=======REGISTRO SALARIAL========");
-        System.out.print("Quantidade de Funcionários:");
-        int qtdEmployee = sc.nextInt();
-        for (int i = 0; i < qtdEmployee; i++) {
+        int qtdEmployee= builder.readInt("Quantidade de Funcionários:");
+        for (int i = 1; i <= qtdEmployee; i++) {
             System.out.println("----------------------------------------");
-            System.out.println("Digite os dados do servidor #" + (1 + i) + ":");
-
-            int level = sc.nextInt();
-            System.out.print();
-            sc.nextLine();
-           
-
-
-
+            System.out.println("Digite os dados do servidor #" + i + ":");
+            workers.add(builder.readWorker());
         }
 
     }

@@ -4,23 +4,34 @@ import projeto_POO.projeto_01.model.enums.WorkerLevel;
 
 public class RecepcionDept extends Department {
 
-    private Integer qtdPeoplesAtt;
+    private Integer qtdProjects;
 
 
-    public RecepcionDept(WorkerLevel level, int qtdPeoplesAtt) {
-        super( level);
-        this.qtdPeoplesAtt = qtdPeoplesAtt;
+    public RecepcionDept(WorkerLevel level, int qtdProjects) {
+        super(level);
+        this.qtdProjects = qtdProjects;
+    }
+
+    public Integer getQtdProjects() {
+        return qtdProjects;
+    }
+
+    public void setQtdProjects(Integer qtdProjects) {
+        this.qtdProjects = qtdProjects;
     }
 
     @Override
-    public double getDayValue() {
+    public double getProductionCount() {
         return 80.00;
     }
 
     @Override
-    public double getBonus() {
-        return 2.5;
+    public double getBonusRate() {
+        return 0.80;
     }
 
-
+    @Override
+    public double bonusAmount() {
+        return getBonusRate() * qtdProjects;
+    }
 }

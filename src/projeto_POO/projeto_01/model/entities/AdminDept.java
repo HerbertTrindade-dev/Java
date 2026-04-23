@@ -5,10 +5,8 @@ import projeto_POO.projeto_01.model.enums.WorkerLevel;
 public class AdminDept extends Department {
 
     private Integer qtdProjects;
-    public AdminDept() {
-    }
 
-    public AdminDept( WorkerLevel level,Integer qtdProjects) {
+    public AdminDept(WorkerLevel level, Integer qtdProjects) {
         super(level);
         this.qtdProjects = qtdProjects;
     }
@@ -22,13 +20,20 @@ public class AdminDept extends Department {
     }
 
     @Override
-    public double getDayValue() {
-        return 150.00;
-    }
-
-    @Override
-    public double getBonus() {
+    public double getProductionCount() {
         return 500.00;
     }
 
+    @Override
+    public double getBonusRate() {
+        return 0;
+    }
+
+    @Override
+    public double bonusAmount() {
+        return 0;
+    }
+
+
 }
+

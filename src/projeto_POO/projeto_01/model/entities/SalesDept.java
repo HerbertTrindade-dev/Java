@@ -1,13 +1,16 @@
 package projeto_POO.projeto_01.model.entities;
 
 import projeto_POO.projeto_01.model.enums.WorkerLevel;
+import projeto_POO.projeto_01.model.interfaces.CalculationBonusAmount;
 
 public class SalesDept extends Department {
+
     private Integer qtdSales;
+
     public SalesDept() {
     }
 
-    public SalesDept(WorkerLevel level,int qtdSales) {
+    public SalesDept(WorkerLevel level, int qtdSales) {
         super(level);
         this.qtdSales = qtdSales;
     }
@@ -21,15 +24,20 @@ public class SalesDept extends Department {
     }
 
     @Override
-    public double getDayValue() {
-        return 100.00;
+    public double getProductionCount() {
+        return 80;
     }
 
     @Override
-    public double getBonus() {
-        return 25.00;
+    public double getBonusRate() {
+        return 0.80;
     }
 
+
+    @Override
+    public double bonusAmount() {
+        return getBonusRate() * getQtdSales();
+    }
 
 }
 
