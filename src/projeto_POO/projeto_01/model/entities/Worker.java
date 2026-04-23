@@ -15,10 +15,19 @@ public class Worker implements CalculationSalary, CalculationBonusAmount {
     public Worker(){
     }
 
-    public Worker(String name, LocalDate birthday,Integer daysWork) {
+    public Worker(String name, LocalDate birthday,Integer daysWork,Department department) {
         this.name = name;
         this.birthday = birthday;
         this.daysWork = daysWork;
+        this.department = department;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public String getName(){
