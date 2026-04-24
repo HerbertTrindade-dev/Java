@@ -24,9 +24,9 @@ public class Program {
             workers.add(builder.readWorker());
         }
         System.out.println();
-        System.out.println("===================================");
-        System.out.println("         RELATORIO SALARIAL        ");
-        System.out.println("===================================");
+        System.out.println("========================================");
+        System.out.println("           RELATORIO SALARIAL        ");
+        System.out.println("========================================");
         for (Worker wk : workers) {
             System.out.println(wk.toString());
         }

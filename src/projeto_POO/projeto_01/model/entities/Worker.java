@@ -70,10 +70,10 @@ public class Worker {
         StringBuilder sb = new StringBuilder();
         sb.append("\nNome: ").append(getName()).append("| Data de nascimento: ").append(getBirthday().format(fmt));
         sb.append("\nDEPARTAMENTO:").append(department.getType()).append(" | Nivel:").append(department.getLevel());
-        sb.append("\nDiaria:R$").append(department.getValueWork()).append(" | Bonus:R$").append(department.bonusAmount());
-        sb.append("\nDias trabalhados: ").append(getDaysWork()).append(" | Imposto:R$").append(department.taxAmount(salary()));
-        sb.append("\nSalario Bruto:R$").append(salary()).append(" | Salario Líquido:R$").append(netSalary());
-        sb.append("\n-----------------------------------------------");
+        sb.append("\nDiaria:R$").append(String.format("%.2f",department.getValueWork())).append(" | Bonus:R$").append(String.format("%.2f",department.bonusAmount()));
+        sb.append("\nDias trabalhados: ").append(getDaysWork()).append(" | Imposto:R$").append(String.format("%.2f",department.taxAmount(salary())));
+        sb.append("\nSalario Bruto:R$").append(String.format("%.2f",salary())).append(" | Salario Líquido:R$").append(String.format("%.2f",netSalary()));
+        sb.append("\n-------------------------------------------------------------");
         return sb.toString();
     }
 }
