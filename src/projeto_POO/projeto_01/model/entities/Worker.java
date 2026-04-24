@@ -1,6 +1,5 @@
 package projeto_POO.projeto_01.model.entities;
 
-import projeto_POO.projeto_01.model.services.Taxable;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -62,11 +61,19 @@ public class Worker {
         return baseSalary * (1 + department.getLevel().getIncreaseSalary()) + department.bonusAmount();
     }
 
+    public double netSalary(){
+        return salary() - department.taxAmount(salary());
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nNome: ").append(getName()).append("| Data de nascimento: ").append(getBirthday().format(fmt));
-        sb.append("\nDias trabalhados: ").append(getDaysWork()).append(" | Salario bruto:R$").append(salary());
+        sb.append("\nDEPARTAMENTO:").append(department.getType()).append(" | Nivel:").append(department.getLevel());
+        sb.append("\nDiaria:R$").append(department.getValueWork()).append(" | Bonus:R$").append(department.bonusAmount());
+        sb.append("\nDias trabalhados: ").append(getDaysWork()).append(" | Imposto:R$").append(department.taxAmount(salary()));
+        sb.append("\nSalario Bruto:R$").append(salary()).append(" | Salario Líquido:R$").append(netSalary());
+        sb.append("\n-----------------------------------------------");
         return sb.toString();
     }
 }

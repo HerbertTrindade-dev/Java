@@ -27,5 +27,9 @@ public class AdminDept extends Department {
         return 150.00;
     }
 
+    @Override
+    public Double getTaxRate() {
+        return 0.10;
+    }
 }
 

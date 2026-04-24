@@ -1,6 +1,11 @@
 package projeto_POO.projeto_01.model.services;
 
 public interface Taxable {
-    String toReport();
+
+    Double getTaxRate();
+
+     default Double taxAmount(double salary){
+        return salary * getTaxRate();
+     }
 }
 

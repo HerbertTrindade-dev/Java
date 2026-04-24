@@ -27,5 +27,9 @@ public class SalesDept extends Department {
         return 90.00;
     }
 
+    @Override
+    public Double getTaxRate() {
+        return 0.12;
+    }
 }
 

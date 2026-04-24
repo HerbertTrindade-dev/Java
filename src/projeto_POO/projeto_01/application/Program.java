@@ -29,7 +29,6 @@ public class Program {
         System.out.println("===================================");
         for (Worker wk : workers) {
             System.out.println(wk.toString());
-            System.out.println(wk.getDepartment().toString());
         }
     }
 }

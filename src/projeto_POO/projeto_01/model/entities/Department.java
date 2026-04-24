@@ -2,21 +2,25 @@ package projeto_POO.projeto_01.model.entities;
 
 import projeto_POO.projeto_01.model.enums.TypeDepartment;
 import projeto_POO.projeto_01.model.enums.WorkerLevel;
+import projeto_POO.projeto_01.model.services.Taxable;
 
 
-
-public abstract class Department{
+public abstract class Department implements Taxable {
 
     private WorkerLevel level;
-    private TypeDepartment tp;
+    private TypeDepartment type;
 
-    public Department(WorkerLevel level,TypeDepartment tp) {
+    public Department(WorkerLevel level,TypeDepartment type) {
         this.level = level;
-        this.tp = tp;
+        this.type = type;
     }
 
     public WorkerLevel getLevel() {
         return level;
+    }
+
+    public TypeDepartment getType() {
+        return type;
     }
 
     public abstract double getBonusRate();
@@ -29,12 +33,9 @@ public abstract class Department{
         return getBonusRate() * getProductionCount();
     }
 
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("DEPARTAMENTO:").append(tp.name()).append(" | Nivel:").append(getLevel());
-        sb.append("\nDiaria:R$").append(getValueWork()).append(" | Bonus:R$").append(bonusAmount());
-        sb.append("\n-------------------------------");
-        return sb.toString();
+    @Override
+    public Double taxAmount(double salary) {
+        return Taxable.super.taxAmount(salary);
     }
 }
 

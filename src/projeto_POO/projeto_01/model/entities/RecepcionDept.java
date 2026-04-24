@@ -28,4 +28,8 @@ public class RecepcionDept extends Department {
         return 80.00;
     }
 
+    @Override
+    public Double getTaxRate() {
+        return 0.10;
+    }
 }
