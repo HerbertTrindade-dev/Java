@@ -1,10 +1,13 @@
 package projeto_POO.projeto_01.model.entities;
 
-import projeto_POO.projeto_01.model.interfaces.CalculationBonusAmount;
+import projeto_POO.projeto_01.model.services.Taxable;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Worker implements CalculationBonusAmount {
+public class Worker {
+
+    private final static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     private String name;
     private LocalDate birthday;
@@ -55,12 +58,15 @@ public class Worker implements CalculationBonusAmount {
     }
 
     public double salary() {
-        double baseSalary = this.daysWork * department.getDayValue();
-        return baseSalary * (1 + department.getLevel().getIncreaseSalary()) + bonusAmount();
+        double baseSalary = this.daysWork * department.getValueWork();
+        return baseSalary * (1 + department.getLevel().getIncreaseSalary()) + department.bonusAmount();
     }
 
     @Override
-    public double bonusAmount() {
-        return 0;
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nNome: ").append(getName()).append("| Data de nascimento: ").append(getBirthday().format(fmt));
+        sb.append("\nDias trabalhados: ").append(getDaysWork()).append(" | Salario bruto:R$").append(salary());
+        return sb.toString();
     }
 }

@@ -13,16 +13,23 @@ public class Program {
         Locale.setDefault(Locale.US);
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         Scanner sc = new Scanner(System.in);
-        WorkertBuilder builder = new WorkertBuilder(fmt,sc);
+        WorkertBuilder builder = new WorkertBuilder(fmt, sc);
 
         List<Worker> workers = new ArrayList<>();
         System.out.println("=======REGISTRO SALARIAL========");
-        int qtdEmployee= builder.readInt("Quantidade de Funcionários:");
+        int qtdEmployee = builder.readInt("Quantidade de Funcionários:");
         for (int i = 1; i <= qtdEmployee; i++) {
             System.out.println("----------------------------------------");
             System.out.println("Digite os dados do servidor #" + i + ":");
             workers.add(builder.readWorker());
         }
-
+        System.out.println();
+        System.out.println("===================================");
+        System.out.println("         RELATORIO SALARIAL        ");
+        System.out.println("===================================");
+        for (Worker wk : workers) {
+            System.out.println(wk.toString());
+            System.out.println(wk.getDepartment().toString());
+        }
     }
 }

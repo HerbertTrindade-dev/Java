@@ -28,9 +28,9 @@ public class WorkertBuilder {
             int indexDepartment = readInt("Digite o departamento:[1-Administracao/2-Vendas/3-Recepcao]");
             TypeDepartment type = TypeDepartment.fromCode(indexDepartment);
             return switch (type) {
-                case ADMINISTRACAO -> createAdminDept();
-                case VENDAS -> createSalesDept();
-                case RECEPCAO -> createRecepcionDept();
+                case ADMINISTRACAO -> createAdminDept(type);
+                case VENDAS -> createSalesDept(type);
+                case RECEPCAO -> createRecepcionDept(type);
             };
         }
 
@@ -42,19 +42,19 @@ public class WorkertBuilder {
         return new Worker(name, birthday, daysWork,createDepartment());
     }
 
-    public Department createAdminDept(){
+    public Department createAdminDept(TypeDepartment type){
         int qtdProjects = readInt("Digite a quantidade de projetos feitos:");
-        return new AdminDept(readLevel(),qtdProjects);
+        return new AdminDept(readLevel(),type,qtdProjects);
     }
 
-    public Department createSalesDept(){
+    public Department createSalesDept(TypeDepartment type){
         int qtdSales = readInt("Digite a quantidade de vendas realizadas:");
-        return new SalesDept(readLevel(),qtdSales);
+        return new SalesDept(readLevel(),type,qtdSales);
     }
 
-    public Department createRecepcionDept(){
+    public Department createRecepcionDept(TypeDepartment type){
         int qtdPeoplesAtt = readInt("Digite a quantidade de pessoas atendidas:");
-        return new RecepcionDept(readLevel(),qtdPeoplesAtt);
+        return new RecepcionDept(readLevel(),type,qtdPeoplesAtt);
     }
 
     public int readInt(String prompt){
@@ -66,17 +66,6 @@ public class WorkertBuilder {
                 System.out.println("Formato incorreto.Digite um numero inteiro.");
             }
         }while(true);
-    }
-
-    public Double readDouble(String prompt){
-        do {
-            try{
-                System.out.print(prompt);
-                return Double.parseDouble(sc.nextLine().trim());
-            } catch (NumberFormatException e){
-                System.out.println("Formato incorreto.Digite um numero real.");
-            }
-        }while (true);
     }
 
     public LocalDate readDate(String prompt){

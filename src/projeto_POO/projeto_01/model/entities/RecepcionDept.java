@@ -1,28 +1,16 @@
 package projeto_POO.projeto_01.model.entities;
 
+import projeto_POO.projeto_01.model.enums.TypeDepartment;
 import projeto_POO.projeto_01.model.enums.WorkerLevel;
 
 public class RecepcionDept extends Department {
 
-    private Integer qtdProjects;
+    private Integer qtdPeopleCount;
 
 
-    public RecepcionDept(WorkerLevel level, int qtdProjects) {
-        super(level);
-        this.qtdProjects = qtdProjects;
-    }
-
-    public Integer getQtdProjects() {
-        return qtdProjects;
-    }
-
-    public void setQtdProjects(Integer qtdProjects) {
-        this.qtdProjects = qtdProjects;
-    }
-
-    @Override
-    public double getProductionCount() {
-        return 80.00;
+    public RecepcionDept(WorkerLevel level, TypeDepartment tp, int qtdPeopleCount) {
+        super(level,tp);
+        this.qtdPeopleCount = qtdPeopleCount;
     }
 
     @Override
@@ -31,7 +19,13 @@ public class RecepcionDept extends Department {
     }
 
     @Override
-    public double bonusAmount() {
-        return getBonusRate() * qtdProjects;
+    public int getProductionCount() {
+        return qtdPeopleCount;
     }
+
+    @Override
+    public double getValueWork() {
+        return 80.00;
+    }
+
 }
