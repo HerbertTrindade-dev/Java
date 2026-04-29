@@ -1,6 +1,7 @@
 package estruturasDados.vetores;
 
 public class Vetor {
+
     private String[] elementos;
     private int tamanho;
 
@@ -9,23 +10,39 @@ public class Vetor {
         this.tamanho = 0;
     }
 
-    public void adiciona(String elementos) throws IllegalStateException {
-        if (this.elementos.length <= this.tamanho) {
-            throw new IllegalStateException("Array completo");
+    public void aumentaTamanho() {
+        if (this.tamanho == this.elementos.length) {
+            String[] elementosNovos = new String[this.tamanho * 2];
+            for (int i = 0; i < tamanho; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos;
         }
-        this.elementos[this.tamanho] = elementos;
-        this.tamanho++;
     }
 
-    public int tamanho() {
+    /*
+    public void adiciona(String elemento) throws ArrayIndexOutOfBoundsException {
+        for (int i = 0; i < this.elementos.length; i++) {
+            if (this.elementos[i] == null) {
+                this.elementos[i] = elemento;
+                break;
+            }
+            throw new ArrayIndexOutOfBoundsException("Nao tem mais espaco vetor");
+        }
+    }*/
+
+    public void adiciona(String elemento) throws IllegalStateException {
+        this.aumentaTamanho();
+        if (this.tamanho < this.elementos.length) {
+            this.elementos[this.tamanho] = elemento;
+            this.tamanho++;
+        } else {
+            throw new IllegalStateException("Nao existe essa posicao no vetor");
+        }
+    }
+
+    public int getTamanho() {
         return this.tamanho;
-    }
-
-    public String buscaPosicao(int posicao) throws IllegalArgumentException {
-        if (!(posicao >= 0 & posicao < this.tamanho)) {
-            throw new IllegalArgumentException("Posicao Invalida");
-        }
-        return this.elementos[posicao];
     }
 
     public int buscaNome(String elemento) throws IllegalArgumentException {
@@ -34,7 +51,26 @@ public class Vetor {
                 return i;
             }
         }
-        throw new IllegalArgumentException("Nao existe esse elemento no vetor");
+        throw new IllegalArgumentException("Nao tem esse elemento no vetor");
+    }
+
+    public String buscaPosicao(int index) {
+        if (!(this.tamanho >= 0 && this.tamanho > index)) {
+            throw new IllegalArgumentException("Posicao invalida");
+        }
+        return this.elementos[index];
+    }
+
+    public void insereElementos(String elemento, int index) throws IllegalArgumentException {
+        if (!(this.tamanho >= 0 && this.tamanho > index)) {
+            throw new IllegalArgumentException("Posicao invalida");
+        }
+        this.aumentaTamanho();
+        for (int i = this.tamanho - 1; i >= index; i--) {
+            this.elementos[i + 1] = this.elementos[i];
+        }
+        this.tamanho++;
+        this.elementos[index] = elemento;
     }
 
     @Override
@@ -42,14 +78,13 @@ public class Vetor {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (int i = 0; i < this.tamanho - 1; i++) {
-            sb.append(elementos[i]);
+            sb.append(this.elementos[i]);
             sb.append(",");
         }
-        if (this.tamanho > 0) {
+        if (this.tamanho - 1 > 0) {
             sb.append(this.elementos[tamanho - 1]);
+            sb.append("]");
         }
-        sb.append("]");
         return sb.toString();
     }
-
 }
