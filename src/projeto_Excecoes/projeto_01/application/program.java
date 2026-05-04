@@ -1,9 +1,9 @@
 package projeto_Excecoes.projeto_01.application;
 
-import projeto_Excecoes.projeto_01.entites.Reservation;
+
 import projeto_Excecoes.projeto_01.exceptions.CurrentDateException;
 
-import java.time.LocalDate;
+
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class program {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyy");
         Scanner sc = new Scanner(System.in);
 
-        BuilderReservation br = new BuilderReservation(fmt,sc);
+        ReservationReader br = new ReservationReader(fmt,sc);
         int roomNumber = br.readRoom();
         br.readCheck(roomNumber);
         System.out.println("Digite os dados para atualizar a reserva:");

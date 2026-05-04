@@ -8,12 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-public class BuilderReservation {
+public class ReservationReader {
 
     private final DateTimeFormatter fmt;
     private final Scanner sc;
 
-    public BuilderReservation(DateTimeFormatter fmt, Scanner sc) {
+    public ReservationReader(DateTimeFormatter fmt, Scanner sc) {
         this.fmt = fmt;
         this.sc = sc;
     }
