@@ -27,13 +27,13 @@ public class Reservation {
             throw new IllegalArgumentException("Data nao pode ser nula");
         }
         if (date.isBefore(dateToday)) {
-            throw new CurrentDateException(date);
+            throw new CurrentDateException(date, dateToday);
         }
     }
 
     private void validadeRange(LocalDate checkIn, LocalDate checkOut) {
         if (checkOut.isBefore(checkIn)) {
-            throw new IllegalArgumentException("ChekOut nao pode ser antes de CheckIn");
+            throw new IllegalArgumentException(" A data de ChekOut " + checkOut + "nao pode ser antes da data de CheckIn " + checkIn);
         }
     }
 

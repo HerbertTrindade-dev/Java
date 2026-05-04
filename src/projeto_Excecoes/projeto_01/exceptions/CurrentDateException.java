@@ -6,8 +6,8 @@ public class CurrentDateException extends Exception {
 
     private final LocalDate invalidDate;
 
-    public CurrentDateException(LocalDate date) {
-        super("A data não pode ser inferior a atual");
+    public CurrentDateException(LocalDate date, LocalDate dateNow) {
+        super("A data "+date+" não pode ser inferior a  data atual"+dateNow);
         this.invalidDate = date;
     }
 
