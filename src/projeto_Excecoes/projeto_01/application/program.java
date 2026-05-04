@@ -14,8 +14,10 @@ public class program {
         Scanner sc = new Scanner(System.in);
 
         BuilderReservation br = new BuilderReservation(fmt,sc);
-        br.readRoom();
-
+        int roomNumber = br.readRoom();
+        br.readCheck(roomNumber);
+        System.out.println("Digite os dados para atualizar a reserva:");
+        br.readCheck(roomNumber);
         sc.close();
     }
 }

@@ -33,7 +33,7 @@ public class Reservation {
 
     private void validadeRange(LocalDate checkIn, LocalDate checkOut) {
         if (checkOut.isBefore(checkIn)) {
-            throw new IllegalArgumentException(" A data de ChekOut " + checkOut + "nao pode ser antes da data de CheckIn " + checkIn);
+            throw new IllegalArgumentException(" A data de ChekOut " + checkOut.format(fmt) + " nao pode ser antes da data de CheckIn " + checkIn.format(fmt));
         }
     }
 
@@ -75,6 +75,6 @@ public class Reservation {
                 + "\n-Check-Out:" + this.checkOut.format(fmt)
                 + "\n-"
                 + duration()
-                + " noites";
+                + " noite(s)";
     }
 }

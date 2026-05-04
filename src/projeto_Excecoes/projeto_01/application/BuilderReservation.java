@@ -21,7 +21,7 @@ public class BuilderReservation {
     public int readInt(String message) {
         do {
             try {
-                System.out.println(message);
+                System.out.print(message);
                 return Integer.parseInt(sc.nextLine().trim());
             } catch (NumberFormatException e) {
                 System.out.println("Numero nao identificado");
@@ -32,7 +32,7 @@ public class BuilderReservation {
     public LocalDate readDate(String message) {
         do {
             try {
-                System.out.println(message);
+                System.out.print(message);
                 return LocalDate.parse(sc.nextLine(), fmt);
             } catch (DateTimeParseException e) {
                 System.out.println("Formato de data incorreto");
@@ -42,13 +42,15 @@ public class BuilderReservation {
 
     public void readCheck(int roomNumber) throws CurrentDateException {
         LocalDate checkIn = readDate("Data do Check-in (dd/MM/yyyy):");
-        LocalDate checkOut =  readDate("Data do Check-Out (dd/MM/yyyy):");
+        LocalDate checkOut = readDate("Data do Check-Out (dd/MM/yyyy):");
         Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
+        System.out.println();
+        System.out.println(reservation);
     }
 
     public int readRoom() {
         int roomNumber = readInt("Digite o numero do quarto:");
-       return roomNumber;
+        return roomNumber;
     }
 
 }
