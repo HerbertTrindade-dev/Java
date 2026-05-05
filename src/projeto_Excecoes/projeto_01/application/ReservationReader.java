@@ -40,12 +40,16 @@ public class ReservationReader {
         } while (true);
     }
 
-    public void readCheck(int roomNumber) throws CurrentDateException {
-        LocalDate checkIn = readDate("Data do Check-in (dd/MM/yyyy):");
-        LocalDate checkOut = readDate("Data do Check-Out (dd/MM/yyyy):");
-        Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
-        System.out.println();
-        System.out.println(reservation);
+    public void readCheck(int roomNumber) {
+        try {
+            LocalDate checkIn = readDate("Data do Check-in (dd/MM/yyyy):");
+            LocalDate checkOut = readDate("Data do Check-Out (dd/MM/yyyy):");
+            Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
+            System.out.println();
+            System.out.println(reservation);
+        }catch (CurrentDateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public int readRoom() {

@@ -15,7 +15,7 @@ public class Reservation {
     public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) throws CurrentDateException {
         validateDate(checkIn);
         validateDate(checkOut);
-        validadeRange(checkIn, checkOut);
+        validateRange(checkIn, checkOut);
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -31,7 +31,7 @@ public class Reservation {
         }
     }
 
-    private void validadeRange(LocalDate checkIn, LocalDate checkOut) {
+    private void validateRange(LocalDate checkIn, LocalDate checkOut) {
         if (checkOut.isBefore(checkIn)) {
             throw new IllegalArgumentException(" A data de ChekOut " + checkOut.format(fmt) + " nao pode ser antes da data de CheckIn " + checkIn.format(fmt));
         }
