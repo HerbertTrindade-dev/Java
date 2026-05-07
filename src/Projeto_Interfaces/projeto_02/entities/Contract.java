@@ -3,24 +3,17 @@ package Projeto_Interfaces.projeto_02.entities;
 import Projeto_Interfaces.projeto_02.services.ContractService;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Contract {
+    private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private int number;
     private LocalDate date;
     private double totalValue;
 
     private List<Installment> installments = new ArrayList<>();
-    private ContractService contractService;
-
-    public Contract(int number, LocalDate date, double totalValue, List<Installment> installments, ContractService contractService) {
-        this.number = number;
-        this.date = date;
-        this.totalValue = totalValue;
-        this.installments = installments;
-        this.contractService = contractService;
-    }
 
     public Contract(int number, LocalDate date, double totalValue) {
         this.number = number;
@@ -62,5 +55,15 @@ public class Contract {
 
     public void setTotalValue(double totalValue) {
         this.totalValue = totalValue;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Installment inst : installments){
+            sb.append(inst.getDate().format(fmt)).append(" - ").append(inst.getValue());
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

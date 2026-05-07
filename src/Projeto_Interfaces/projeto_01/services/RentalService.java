@@ -36,12 +36,12 @@ public class RentalService {
 
     public void processInvoice(CarRental carRental) {
          double amount = 0.0;
-        double minutes = ChronoUnit.HOURS.between(carRental.getStart(),carRental.getFinish());
+        double minutes = ChronoUnit.MINUTES.between(carRental.getStart(),carRental.getFinish());
         double hour = Math.ceil(minutes / 60);
         if (hour <= 12L) {
             amount = (this.pricePerHour * hour);
         } else {
-            amount = (this.pricePerDay * hour);
+            amount = (this.pricePerDay * hour/24.0);
         }
         carRental.setInvoice(new Invoice(amount, taxService.tax(amount)));
     }
