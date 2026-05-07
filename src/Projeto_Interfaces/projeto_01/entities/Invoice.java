@@ -8,7 +8,6 @@ public class Invoice {
     public Invoice(double basicPayment, double tax) {
         this.basicPayment = basicPayment;
         this.tax = tax;
-
     }
 
     public double getBasicPayment() {

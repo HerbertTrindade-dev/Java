@@ -1,6 +1,7 @@
 package Projeto_Interfaces.projeto_01.services;
 
 import Projeto_Interfaces.projeto_01.entities.CarRental;
+import Projeto_Interfaces.projeto_01.entities.Invoice;
 
 import java.time.temporal.ChronoUnit;
 
@@ -9,9 +10,20 @@ public class RentalService {
     private double pricePerDay;
     private double pricePerHour;
 
-    public RentalService(double pricePerDay, double pricePerHour) {
+    private TaxService taxService;
+
+    public RentalService(double pricePerDay, double pricePerHour, TaxService taxService) {
         this.pricePerDay = pricePerDay;
         this.pricePerHour = pricePerHour;
+        this.taxService = taxService;
+    }
+
+    public TaxService getTaxService() {
+        return taxService;
+    }
+
+    public void setTaxService(TaxService taxService) {
+        this.taxService = taxService;
     }
 
     public double getPricePerDay() {
@@ -23,12 +35,14 @@ public class RentalService {
     }
 
     public void processInvoice(CarRental carRental) {
-        double value = 0.0;
-        long duration = ChronoUnit.HOURS.between(carRental.getFinish(), carRental.getStart());
-        if (duration <= 12L) {
-            value = this.pricePerHour * duration;
+         double amount = 0.0;
+        double minutes = ChronoUnit.HOURS.between(carRental.getStart(),carRental.getFinish());
+        double hour = Math.ceil(minutes / 60);
+        if (hour <= 12L) {
+            amount = (this.pricePerHour * hour);
         } else {
-            value = this.pricePerDay * duration;
+            amount = (this.pricePerDay * hour);
         }
+        carRental.setInvoice(new Invoice(amount, taxService.tax(amount)));
     }
 }

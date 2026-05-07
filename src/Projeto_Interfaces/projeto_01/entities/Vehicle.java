@@ -1,17 +1,17 @@
 package Projeto_Interfaces.projeto_01.entities;
 
 public class Vehicle {
-    private String name;
+    private String model;
 
     public Vehicle(String name) {
-        this.name = name;
+        this.model = name;
     }
 
-    public String getName() {
-        return name;
+    public String getModel() {
+        return model;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setModel(String model) {
+        this.model = model;
     }
 }
