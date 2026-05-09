@@ -16,10 +16,13 @@ public class ContractService {
     }
 
     public void processContract(Contract contract, int month) {
-        double valueTotalInstallment = 0.0;
+        double valueIntstallment = contract.getTotalValue() / month;
+        double valueInstallmentTotal = 0.0;
+        double valueInstallmentWithTax = 0.0;
         for (int i = 1; i <= month; i++) {
-            valueTotalInstallment = paymentService.calculatePaymentValue(contract.getTotalValue() / month, i);
-            Installment installment = new Installment(contract.getDate().plusMonths(i),paymentService.calculateInstallmentValue(valueTotalInstallment));
+            valueInstallmentWithTax = paymentService.calculateTaxPaymentValue(valueIntstallment, i) + valueIntstallment;
+            valueInstallmentTotal = paymentService.calculateTaxInstallmentValue(valueInstallmentWithTax) + valueInstallmentWithTax;
+            Installment installment = new Installment(contract.getDate().plusMonths(i), valueInstallmentTotal);
             contract.addInstallment(installment);
         }
 

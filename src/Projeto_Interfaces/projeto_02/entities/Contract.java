@@ -1,6 +1,5 @@
 package Projeto_Interfaces.projeto_02.entities;
 
-import Projeto_Interfaces.projeto_02.services.ContractService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
