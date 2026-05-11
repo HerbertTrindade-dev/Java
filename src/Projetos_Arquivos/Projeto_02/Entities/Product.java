@@ -1,14 +1,14 @@
-package Projetos_Arquivos.Projeto_01.Entities;
+package Projetos_Arquivos.Projeto_02.Entities;
 
 public class Product {
     private String name;
-    private int quantity;
     private double value;
+    private int quantity;
 
-    public Product(String name, int quantity, double value) {
+    public Product(String name,double value, int quantity) {
         this.name = name;
-        this.quantity = quantity;
         this.value = value;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -35,14 +35,14 @@ public class Product {
         this.value = value;
     }
 
-    public double valueTotal(){
+    public double totalValue(){
         return this.quantity * this.value;
     }
 
     @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.name).append(",").append(this.value);
-        return sb.toString();
+    public String toString() {
+        return this.name
+                +","
+                +totalValue();
     }
 }

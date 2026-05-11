@@ -34,13 +34,17 @@ public class Program {
             products[i] = new Product(nameProduct,qtdProduct,valueProduct);
             System.out.println("------------------------------");
         }
-
+        sc.nextLine();
         System.out.print("Digite o caminho do arquivo:");
         String strPath = sc.nextLine();
+
         File file = new File(strPath);
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))){
-
+            for (Product pd : products){
+                bw.write(pd.toString());
+                bw.newLine();
+            }
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
