@@ -17,7 +17,7 @@ public class Program {
 
         for (int i = 0; i < qtdValues ; i++){
             int value = sc.nextInt();
-            ps.addValue(value);
+           // ps.addValue(value);
         }
         System.out.println(ps.first());
         ps.print();
