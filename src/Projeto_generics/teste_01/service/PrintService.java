@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class PrintService {
+public class PrintService<T> {
 
-    private List<Objects> list = new ArrayList<>();
+    private List<T> list = new ArrayList<>();
 
-    public void addValue(Objects values) {
+    public void addValue(T values) {
         list.add(values);
     }
 
-    public List<Objects> getList() {
+    public List<T> getList() {
         return list;
     }
 
-    public Objects first() {
+    public T first() {
         if (list.isEmpty()) {
             throw new IllegalStateException("Lista nao pode ser vazia");
         }

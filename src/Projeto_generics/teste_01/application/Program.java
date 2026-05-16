@@ -10,14 +10,14 @@ public class Program {
 
         Scanner sc = new Scanner(System.in);
 
-        PrintService ps = new PrintService();
+        PrintService<String> ps = new PrintService<>();
 
         System.out.print("Quantidade de valores:");
         int qtdValues = sc.nextInt();
 
         for (int i = 0; i < qtdValues ; i++){
-            int value = sc.nextInt();
-           // ps.addValue(value);
+            String name = sc.next();
+            ps.addValue(name);
         }
         System.out.println(ps.first());
         ps.print();

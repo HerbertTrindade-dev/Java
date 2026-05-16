@@ -1,4 +1,4 @@
-package Projeto_generics.entities;
+package Projeto_generics.Teste_02.entities;
 
 public class Product {
     private String name;
